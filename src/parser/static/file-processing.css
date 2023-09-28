@@ -1,0 +1,108 @@
+
+/* Parser body styles */
+
+.drag_box {
+
+    margin-top: 3vh;
+    margin-left: auto;
+    justify-content: center;
+    height: 15vh;
+    width: 65vw;
+    border: 2px dashed rgb(137, 137, 255);
+    border-radius: 5px;
+}
+
+
+input[type="file"] {
+
+    display: none;
+
+}
+
+.custom-file-upload {
+
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    
+}
+
+.custom-file-upload:hover {
+
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    
+}
+
+.drag_txt {
+
+    margin-top: 5px;
+    margin-bottom: -5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.browse_txt {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(137, 137, 255);
+
+}
+
+.circ_loader {
+
+    margin-top: 3vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.circ_loader h3 {
+
+    color: rgb(137, 137, 255);
+
+}
+.circ_loader h5 {
+
+    margin-top: -1vh;
+
+}
+
+/* Contains file table */
+.file_div {
+
+    min-height: 19vh;
+    overflow: auto;
+
+}
+.file_table {
+    
+    margin-top: 2vh;
+
+}
+.file_table th {
+
+    border-bottom: 1px solid rgb(137, 137, 255);
+}
+
+
+.parse_btn button {
+
+margin-top: 2vh;
+width: 6vw;
+height: 4vh;
+background-color: rgb(137, 137, 255);
+border-radius: 5px;
+font-weight: bold;
+font-size: 15px;
+
+}
+

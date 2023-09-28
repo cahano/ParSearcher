@@ -1,0 +1,47 @@
+/* .App {
+  text-align: center;
+  background-color: #282c34;
+} */
+
+/* Setting primary color */
+body {
+  background-color: #282c34;
+}
+
+
+.about_frame {
+
+  margin: auto;
+  margin-top: 0vh;
+  width: 50vw;
+  height: 29.5vh;
+  color: aliceblue;
+  background-color: #161616;
+  display: flex;
+  border-radius: 3px;
+
+}
+
+.about_text {
+
+  text-align: left;
+  margin: auto;
+  margin-top: 0vh;
+  width: 45vw;
+  height: 5vh;
+  color: rgb(214, 218, 215);
+  background-color: #161616;
+
+}
+
+.member {
+
+  margin-bottom: 3vh;
+
+}
+
+.member h2 {
+
+  margin-bottom: -10px;
+
+}
