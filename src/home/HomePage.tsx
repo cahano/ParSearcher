@@ -14,9 +14,9 @@ class AboutPage extends React.Component {
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a className="active" href="/">Home</a>
-          <a href="/parser">Parser</a>
-          <a href="/team">Team</a>
+          <a className="active" href="./#">Home</a>
+          <a href="./#/parser">Parser</a>
+          <a href="./#/team">Team</a>
         </div>
 
         <div className="home_frame">

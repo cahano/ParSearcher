@@ -14,9 +14,9 @@ class TeamPage extends React.Component {
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="/">Home</a>
-          <a href="/parser">Parser</a>
-          <a className="active" href="/team">Team</a>
+          <a href="./#">Home</a>
+          <a href="./#/parser">Parser</a>
+          <a className="active" href="./#/team">Team</a>
         </div>
 
         <div className="about_frame">
