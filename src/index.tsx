@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import DocParser from './parser/DocParser';
@@ -14,15 +14,15 @@ const root = ReactDOM.createRoot(
 
 export default function Parsearch() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
 
-          <Route path="/*" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/parser" element={<DocParser />} />
           <Route path="/team" element={<TeamPage />} />
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
