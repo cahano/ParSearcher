@@ -18,10 +18,6 @@
 .env.test.local
 .env.production.local
 
-# py-related
-__pycache__/
-/parsearch.log
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
