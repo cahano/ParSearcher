@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import DocParser from './parser/DocParser';
@@ -14,8 +14,7 @@ const root = ReactDOM.createRoot(
 
 export default function Parsearch() {
   return (
-    // Using hash router for unpredictable server URL 
-    <HashRouter basename='/'>
+    <BrowserRouter>
       <Routes>
 
           <Route path="/*" element={<HomePage />} />
@@ -23,7 +22,7 @@ export default function Parsearch() {
           <Route path="/team" element={<TeamPage />} />
 
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
