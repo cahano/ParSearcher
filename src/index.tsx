@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 
 export default function Parsearch() {
   return (
-    <HashRouter>
+    <HashRouter basename='/parsearch'>
       <Routes>
 
           <Route path="/" element={<HomePage />} />
