@@ -15,6 +15,9 @@ export async function FileDownload(url: string): Promise<void> {
                                   headers: { 'Content-Type': 'application/vnd.openxmlformats-officedocument.spreedsheetml.sheet' } })
 
 
+    console.log('FILE DONWLOAD DATA')
+    console.log(res.data)
+
     // Blob object for storing output xlsx contents
     const blob = new Blob([res.data.file],
                           { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
