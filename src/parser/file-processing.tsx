@@ -96,7 +96,9 @@ export class FileProcessor extends React.Component<{},
       formData.append("file", file);
 
       reader.onloadend = () => {
-        axiosPDFPost(formData, "http://localhost:8008/upload")
+        // Connect to Heroku app
+        axiosPDFPost(formData,
+                     "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
       };
 
       reader.onerror = () => {
@@ -117,9 +119,11 @@ export class FileProcessor extends React.Component<{},
                    isParsing: true})
 
     // Parse uploaded pdf docs, and once complete, update parse state
-    FileDownload('http://localhost:8008/download').then((value) => {
-      this.setState({...this.state,
-                     isParsing: false})
+    // Connect to Heroku app
+    FileDownload('https://parsearcher-api-c4c5fa341782.herokuapp.com/download')
+                .then((value) => {
+                                  this.setState({...this.state,
+                                  isParsing: false})
     })
 
   }
