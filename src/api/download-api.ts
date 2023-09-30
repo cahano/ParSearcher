@@ -4,9 +4,9 @@
 
 import axios from 'axios';
 
-export interface parsedFile {
-    file: Blob
-}
+// export interface parsedFile {
+//     file: Blob
+// }
 
 export async function FileDownload(url: string): Promise<void> {
 
@@ -14,10 +14,10 @@ export async function FileDownload(url: string): Promise<void> {
                                 { responseType: 'arraybuffer' })
 
     console.log('FILE DONWLOAD DATA')
-    console.log(res.data.file)
+    console.log(res.data)
 
     // Blob object for storing output xlsx contents
-    const blob = new Blob([res.data.file],
+    const blob = new Blob([res.data],
                           { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
 
 
