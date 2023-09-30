@@ -11,20 +11,27 @@ export interface parsedFile {
 export async function FileDownload(url: string): Promise<void> {
 
     const res = await axios.get(url,
-                                { responseType: 'arraybuffer' });
+                                { responseType: 'arraybuffer' ,
+                                  headers : { "Content-Encoding": "UTF-8",
+                                              "Content-Disposition": "attachment; filename='parsed_output.xlsx'" }})
+                                .then((res) => {
+
+                                    const blob = new Blob([res.data.file],
+                                        { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
+                                });
 
     // Blob object for storing output xlsx contents
-    const blob = new Blob([res.data.file],
-                          { type: 'application/octet-stream' });
+    // const blob = new Blob([res.data.file],
+    //                       { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
 
-    // Creating download link element
-    const URL = window.URL.createObjectURL(blob);
-    const output_el = document.createElement('a');
-    output_el.href = URL;
+    // // Creating download link element
+    // const URL = window.URL.createObjectURL(blob);
+    // const output_el = document.createElement('a');
+    // output_el.href = URL;
 
-    // Simulating link click
-    output_el.download = 'parsed_output.xlsx';
-    output_el.click();
+    // // Simulating link click
+    // output_el.download = 'parsed_output.xlsx';
+    // output_el.click();
 
     return Promise.resolve();
 }
