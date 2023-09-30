@@ -11,8 +11,7 @@ export interface parsedFile {
 export async function FileDownload(url: string): Promise<void> {
 
     const res = await axios.get(url,
-                                { responseType: 'arraybuffer' ,
-                                  headers : { "Content-Encoding": "UTF-8"}})
+                                { responseType: 'arraybuffer' })
 
 
     // Blob object for storing output xlsx contents
