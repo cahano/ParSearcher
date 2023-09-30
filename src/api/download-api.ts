@@ -11,12 +11,19 @@ export interface parsedFile {
 export async function FileDownload(url: string): Promise<void> {
 
     const res = await axios.get(url,
-                                { responseType: 'arraybuffer' })
+                                { responseType: 'arraybuffer',
+                                  headers: { 'Content-Type': 'application/vnd.openxmlformats-officedocument.spreedsheetml.sheet' } })
 
 
     // Blob object for storing output xlsx contents
     const blob = new Blob([res.data.file],
-                          { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
+                          { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
+
+
+
+    // XLSX FILE IS CORRUPT - NEED TO FIX
+    // NEED TO DETERMINE IF TORNADO SIDE OR REACT SIDE FILE HANDLING
+
 
     // Creating download link element
     const URL = window.URL.createObjectURL(blob);
@@ -29,6 +36,3 @@ export async function FileDownload(url: string): Promise<void> {
 
     return Promise.resolve();
 }
-
-
-// 'http://localhost:8008/download',
