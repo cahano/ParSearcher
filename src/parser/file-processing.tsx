@@ -11,7 +11,6 @@ import { FileDownload } from '../api/download-api'
 
 import { numberWithCommas } from "../constants";
 import './static/file-processing.css';
-import { isDisabled } from "@testing-library/user-event/dist/utils";
  
 
 export class FileProcessor extends React.Component<{},
@@ -57,7 +56,8 @@ export class FileProcessor extends React.Component<{},
       const formData = new FormData();
       formData.append("file", file);
       // make a POST request to the File Upload API
-      axiosPDFPost(formData, "http://localhost:8008/upload")
+      axiosPDFPost(formData,
+                   "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
     })
   };
 
