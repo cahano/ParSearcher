@@ -15,7 +15,7 @@ export async function FileDownload(url: string): Promise<void> {
 
     // Blob object for storing output xlsx contents
     const blob = new Blob([res.data.file],
-                          { type: 'application/vnd.openxmlformats-officedocument.spreedsheetml.sheet' });
+                          { type: 'application/octet-stream' });
 
     // Creating download link element
     const URL = window.URL.createObjectURL(blob);
