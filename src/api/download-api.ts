@@ -11,11 +11,10 @@ export interface parsedFile {
 export async function FileDownload(url: string): Promise<void> {
 
     const res = await axios.get(url,
-                                { responseType: 'arraybuffer',
-                                  headers: { 'Content-Type': 'application/vnd.openxmlformats-officedocument.spreedsheetml.sheet' } })
+                                { responseType: 'arraybuffer' })
                                   .then((res) => { const outputFile = 'parse_results.xlsx';
                                   console.log('FILE DONWLOAD DATA')
-                                  console.log(res.data)
+                                  console.log(res.data.file)
                               
                                   // Blob object for storing output xlsx contents
                                   const blob = new Blob([res.data.file])
