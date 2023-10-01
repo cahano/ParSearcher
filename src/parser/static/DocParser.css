@@ -11,6 +11,7 @@
   background-color: #161616;
   display: flex;
   border-radius: 3px;
+  font-size: 1.7vh;
 
 }
 
@@ -23,5 +24,6 @@
   height: 5vh;
   color: rgb(214, 218, 215);
   background-color: #161616;
+  font-size: 1.7vh;
 
 }

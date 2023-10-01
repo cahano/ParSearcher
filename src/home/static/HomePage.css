@@ -27,9 +27,10 @@
     margin: auto;
     margin-top: 0vh;
     width: 45vw;
-    height: 5vh;
+    height: 37vh;
     color: rgb(214, 218, 215);
     background-color: #161616;
+    font-size: 1.70vh;
 
 }
 .home_text h4 {
@@ -40,6 +41,6 @@
 
 .ver {
 
-    font-size: 16px;
+    font-size: 1.70vh;
 
 }

@@ -14,11 +14,12 @@ body {
   margin: auto;
   margin-top: 0vh;
   width: 50vw;
-  height: 29.5vh;
+  height: 39vh;
   color: aliceblue;
   background-color: #161616;
   display: flex;
-  border-radius: 3px;
+  border-radius: 0.2vw;;
+  font-size: 1.75vh;
 
 }
 
@@ -42,6 +43,6 @@ body {
 
 .member h2 {
 
-  margin-bottom: -10px;
+  margin-bottom: -1.2vh;
 
 }

@@ -8,8 +8,9 @@
     justify-content: center;
     height: 15vh;
     width: 65vw;
-    border: 2px dashed rgb(137, 137, 255);
-    border-radius: 5px;
+    border: 0.35vh dashed rgb(137, 137, 255);
+    border-radius: 0.5vw;
+    font-size: 1.65vh;
 }
 
 
@@ -21,29 +22,31 @@ input[type="file"] {
 
 .custom-file-upload {
 
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.20vh solid #ccc;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 0.4vh 0.2vw;
     cursor: pointer;
+    font-size: 1.6vh;
     
 }
 
 .custom-file-upload:hover {
 
-    border: 1px solid #ccc;
+    border: 0.20vh solid #ccc;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 0.4vh 0.2vw;
     cursor: pointer;
+    font-size: 1.6vh;
     
 }
 
 .drag_txt {
 
-    margin-top: 5px;
-    margin-bottom: -5px;
+    margin-top: 0.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.6vh;
 }
 
 .browse_txt {
@@ -52,6 +55,7 @@ input[type="file"] {
     flex-direction: column;
     align-items: center;
     color: rgb(137, 137, 255);
+    font-size: 1.6vh;
 
 }
 
@@ -63,6 +67,7 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.6vh;
 
 }
 .circ_loader h3 {
@@ -81,16 +86,19 @@ input[type="file"] {
 
     min-height: 19vh;
     overflow: auto;
+    font-size: 1.6vh;
 
 }
 .file_table {
     
     margin-top: 2vh;
+    font-size: 1.6vh;
 
 }
 .file_table th {
 
-    border-bottom: 1px solid rgb(137, 137, 255);
+    border-bottom: 0.20vh solid rgb(137, 137, 255);
+    font-size: 1.6vh;
 }
 
 
@@ -100,9 +108,10 @@ margin-top: 2vh;
 width: 6vw;
 height: 4vh;
 background-color: rgb(137, 137, 255);
-border-radius: 5px;
+border: none;
+border-radius: 0.5vh;
 font-weight: bold;
-font-size: 15px;
+font-size: 1.5vh;
 
 }
 

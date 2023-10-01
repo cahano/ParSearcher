@@ -31,8 +31,13 @@ class TeamPage extends React.Component {
             </div>
 
             <div className='member'>
+              <h2>Mo Hayat</h2>
+              <p><i>Rensselaer Polytechnic Institute - Electrical Engineering B.S. (2021); Bank of America, AWS.</i></p>
+            </div>
+
+            <div className='member'>
               <h2>Owen Cahan</h2>
-              <p><i>Rensselaer Polytechnic Institute - Mathematics B.S., Business B.A. (2021); Magnetar, IBM, JPM.</i></p>
+              <p><i>Rensselaer Polytechnic Institute - Mathematics B.S., Business B.A. (2021); Magnetar, JP Morgan.</i></p>
             </div>
 
           </div>
