@@ -23,7 +23,7 @@ class AboutPage extends React.Component {
 
           <div className="home_text">
 
-            <h1>ParSearch <span className="ver">0.0.1</span></h1>
+            <h1>ParSearch <span className="ver">0.1.0</span></h1>
 
             <h4>Our purpose in a single question:</h4> <p><i> If even 10% of each of the millions of PDF's contents on which you train are
                 innaccurately parsed, is the resulting AI model reliable?</i></p>
