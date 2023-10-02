@@ -32,7 +32,7 @@ class TeamPage extends React.Component {
 
             <div className='member'>
               <h2>Mo Hayat</h2>
-              <p><i>Rensselaer Polytechnic Institute - Electrical Engineering B.S. (2021); Bank of America, AWS.</i></p>
+              <p><i>Rensselaer Polytechnic Institute - Electrical Engineering B.S. (2020); Bank of America, AWS.</i></p>
             </div>
 
             <div className='member'>
