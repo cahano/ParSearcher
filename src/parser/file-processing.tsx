@@ -17,7 +17,8 @@ export class FileProcessor extends React.Component<{},
                                                   {isOver: boolean,
                                                    files: File[],
                                                    isLoaded: boolean,
-                                                   isParsing: boolean}> {
+                                                   isParsing: boolean,
+                                                   isUploading: boolean}> {
 
   constructor(props: any) {
 
@@ -85,7 +86,8 @@ export class FileProcessor extends React.Component<{},
     // store files to state 
     this.setState({...this.state,
                    files: droppedFiles,
-                   isLoaded: true})
+                   isLoaded: true,
+                   isUploading: true})
  
     // Use FileReader to read file content
     droppedFiles.forEach((file) => {
@@ -99,6 +101,12 @@ export class FileProcessor extends React.Component<{},
         // Connect to Heroku app
         axiosPDFPost(formData,
                      "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
+                     .then((value) => {
+
+                        this.setState({...this.state,
+                                       isUploading: false})
+
+                     })
       };
 
       reader.onerror = () => {
@@ -175,7 +183,7 @@ export class FileProcessor extends React.Component<{},
           ) : (
 
             <div>
-              {!this.state.isLoaded ? (
+              {!this.state.isLoaded && !this.state.isUploading ? (
                 <div>
 
                     <div className="file_div">

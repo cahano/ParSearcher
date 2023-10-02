@@ -4,7 +4,7 @@
 
 import axios from 'axios';
 
-export async function axiosPDFPost(files: FormData, url: string) {
+export async function axiosPDFPost(files: FormData, url: string): Promise<void> {
 
     // Async post PDF data to api
     await axios.post(url,
@@ -23,6 +23,8 @@ export async function axiosPDFPost(files: FormData, url: string) {
                         // handle errors
                         console.log(error);
                     });
+
+    return Promise.resolve()
 
 }
 
