@@ -148,110 +148,153 @@ export class FileProcessor extends React.Component<{},
   public render() {
     return (
 
+      // Entire output div
       <div>
-        <div
-          onDragOver={this.handleDragOver}
-          onDragLeave={this.handleDragLeave}
-          onDrop={this.handleDrop}
-          className="drag_box"
-          style={{
-            backgroundColor: this.state.isOver ? '#222222' : '#161616',
-          }}
-        >
 
-          <div className="drag_txt">
-            <h2>Drag PDF files here</h2>
-          </div>
+          {/* Uploads (drag & drop, browse) */}
+          <div
+            className="drag_box"
+            style={{
+              backgroundColor: this.state.isOver ? '#222222' : '#161616',
+            }}
+            onDragOver={this.handleDragOver}
+            onDragLeave={this.handleDragLeave}
+            onDrop={this.handleDrop}
+          >
 
-          <div className='browse_txt'>
-            <label htmlFor="file_upload" className="custom-file-upload">
-                or browse
-            </label>
-            <input id="file_upload"
-                  type="file"
-                  accept=".pdf"
-                  onChange={this.handleBrowseUpload}
-                  multiple />
-          </div>
-
-        </div>
-
-        {/* Only showing uploaded file table once files have been uploaded */}
-        <div>
-
-          {this.state.isParsing ? (
-            
-            <div className="circ_loader">
-              <h3>Parsing</h3>
-              <h5><i>This may take awhile...</i></h5>
-              {/* Circular loader from material UI */}
-              <CircularProgress style={{'color': "rgb(137, 137, 255)"}}/>
+            <div className="drag_txt">
+              <h2>Drag PDF files here</h2>
             </div>
 
-          ) : (
+            <div className='browse_txt'>
+              <label htmlFor="file_upload" className="custom-file-upload">
+                  or browse
+              </label>
+              <input id="file_upload"
+                    type="file"
+                    accept=".pdf"
+                    onChange={this.handleBrowseUpload}
+                    multiple />
+            </div>
 
-            <div>
-              {!this.state.isLoaded || this.state.isUploading ? (
-                <div>
+          </div>
+        <div className="btm_div">
+            <div className="table_p_btn">
+              {/* Upload results and parse section (bottom div) */}
+              <div>
 
-                    <div className="file_div">
-                      <table className="file_table">
-                          <tr>
-                            <th style={{width: "17vw"}}>File</th>
-                            <th>Size</th>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                      </table>
-                    </div>
+                {/* Upload results table and parse button */}
+                {!this.state.isLoaded ? (
+                  // IF DOCS HAVE NOT LOADED
+                  <div>
+                      {/* Upload table */}
+                      <div className="file_div">
+                        <table className="file_table">
+                            <tr>
+                              <th style={{width: "17vw"}}>File</th>
+                              <th>Size</th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                        </table>
+                      </div>
 
-                    <div className="parse_btn">
-                      <button type="submit"
-                              onClick={(event) => this.handleDownload()}
-                              disabled>
-                        Parse
-                      </button>
-                    </div>
-
+                      {/* Parse button */}
+                      <div className="parse_btn">
+                        <button type="submit"
+                                onClick={(event) => this.handleDownload()}
+                                disabled>
+                          Parse
+                        </button>
+                      </div>
                   </div>
 
-              ) : (
+                ) : (
+                  // IF DOCS HAVE LOADED
+                  <div>
+                      <div className="file_div">
+                            <table className="file_table">
+                              <tr>
+                                <th style={{width: "17vw"}}>File</th>
+                                <th>Size</th>
+                              </tr>
+                              {this.state.files.map(
+                                                ({name, size}: any) =>
+                                                {return <tr>
+                                                          <td>{name} </td>
+                                                          <td>{String(numberWithCommas(
+                                                                        Math.round(size/1000)
+                                                                        )
+                                                                      )} KB</td>
+                                                        </tr>
+                                                }
+                                              )
+                              }
+                          </table>
+                      </div>
 
-                <div>
-                  <div className="file_div">
-                      <table className="file_table">
-                        <tr>
-                          <th style={{width: "17vw"}}>File</th>
-                          <th>Size</th>
-                        </tr>
-                        {this.state.files.map(
-                                              ({name, size}: any) =>
-                                              {return <tr>
-                                                        <td>{name} </td>
-                                                        <td>{String(numberWithCommas(
-                                                                      Math.round(size/1000)
-                                                                      )
-                                                                    )} KB</td>
-                                                      </tr>
-                                              }
-                                            )
-                        }
-                      </table>
+                      <div className="parse_btn">
+                        <button type="submit"
+                                onClick={(event) => this.handleDownload()}>
+                          Parse
+                        </button>
+                      </div>
                   </div>
 
-                    <div className="parse_btn">
-                      <button type="submit"
-                              onClick={(event) => this.handleDownload()}>
-                        Parse
-                      </button>
-                    </div>
-
-                </div>
                 )}
+
+              </div>
+              
+            </div>
+
+            <div className="state_frame">
+
+                {/* state displays */}
+                <div>
+                  
+                  {/* Parsing display */}
+                  {this.state.isParsing ? (
+
+                    <div className="circ_loader">
+                      <h3>Parsing</h3>
+                      <h5><i>This may take awhile...</i></h5>
+                      {/* Circular loader from material UI */}
+                      <CircularProgress style={{'color': "rgb(137, 137, 255)"}}/>
+                    </div>
+
+                  ) : (
+
+                    <div>
+                      {this.state.isUploading ? (
+                          <div>
+
+                            <div className="circ_loader">
+                                <h3>Uploading</h3>
+                                <h5><i>Just a moment...</i></h5>
+                                {/* Circular loader from material UI */}
+                                <CircularProgress style={{'color': "rgb(137, 137, 255)"}}/>
+                            </div>
+
+                          </div>
+
+                        ) : (
+
+                          <div>
+                              
+                          </div>
+
+                        )}
+
+                    </div>
+                    
+                  )}
+
                 </div>
-          )}
+
+            </div>
+
           </div>
 
       </div>

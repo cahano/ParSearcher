@@ -115,3 +115,28 @@ font-size: 1.5vh;
 
 }
 
+
+.btm_div {
+
+    display: inline;
+    white-space: nowrap;
+    font-size: 1.5vh;
+
+}
+
+
+.table_p_btn {
+
+    float: left;
+
+}
+
+
+.state_frame {
+
+    margin-top: 3vh;
+    width: 40vw;
+    float: right;
+    font-size: 5vh;
+
+}
