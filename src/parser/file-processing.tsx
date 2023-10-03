@@ -1,5 +1,5 @@
 //
-// Test Axios Upload - connects w/ Tornado py instance (tornado_server_v1.py)
+// File Processing JSX class
 //
 
 import * as React from "react"
