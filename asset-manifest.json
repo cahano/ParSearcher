@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ParSearcher/static/css/main.f77f5365.css",
-    "main.js": "/ParSearcher/static/js/main.0c71906e.js",
+    "main.js": "/ParSearcher/static/js/main.7f33d70a.js",
     "static/js/787.38361d3d.chunk.js": "/ParSearcher/static/js/787.38361d3d.chunk.js",
     "index.html": "/ParSearcher/index.html",
     "main.f77f5365.css.map": "/ParSearcher/static/css/main.f77f5365.css.map",
-    "main.0c71906e.js.map": "/ParSearcher/static/js/main.0c71906e.js.map",
+    "main.7f33d70a.js.map": "/ParSearcher/static/js/main.7f33d70a.js.map",
     "787.38361d3d.chunk.js.map": "/ParSearcher/static/js/787.38361d3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f77f5365.css",
-    "static/js/main.0c71906e.js"
+    "static/js/main.7f33d70a.js"
   ]
 }
