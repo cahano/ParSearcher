@@ -18,7 +18,8 @@ export class FileProcessor extends React.Component<{},
                                                    files: File[],
                                                    isLoaded: boolean,
                                                    isParsing: boolean,
-                                                   isUploading: boolean}> {
+                                                   isUploading: boolean,
+                                                   isFin: boolean}> {
 
   constructor(props: any) {
 
@@ -27,7 +28,8 @@ export class FileProcessor extends React.Component<{},
       ...this.state,
       isOver: false,
       isLoaded: false,
-      isUploading: false
+      isUploading: false,
+      isFin: false,
     }
 
     // Binding events
@@ -235,13 +237,34 @@ export class FileProcessor extends React.Component<{},
                           </table>
                       </div>
 
-                      <div className="parse_btn">
-                        <button type="submit"
-                                onClick={(event) => this.handleDownload()}>
-                          Parse
-                        </button>
-                      </div>
+                      {/* DISABLED IF PARSING */}
+                      <div>
+
+                        {this.state.isParsing ? (
+
+                        <div className="parse_btn">
+                            <button type="submit"
+                                    onClick={(event) => this.handleDownload()}
+                                    disabled>
+                              Parse
+                            </button>
+                        </div>
+
+                        ) : (
+
+                        <div className="parse_btn">
+                            <button type="submit"
+                                    onClick={(event) => this.handleDownload()}>
+                              Parse
+                            </button>
+                        </div>
+                        )}
+
+                      <div/>
+
                   </div>
+                
+                </div>
 
                 )}
 
