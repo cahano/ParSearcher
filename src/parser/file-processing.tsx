@@ -26,7 +26,8 @@ export class FileProcessor extends React.Component<{},
     this.state = {
       ...this.state,
       isOver: false,
-      isLoaded: false
+      isLoaded: false,
+      isUploading: false
     }
 
     // Binding events
@@ -62,6 +63,7 @@ export class FileProcessor extends React.Component<{},
                    .then((value) => {
 
                     this.setState({...this.state,
+                                   isLoaded: true,
                                    isUploading: false})
 
                  })
@@ -92,7 +94,6 @@ export class FileProcessor extends React.Component<{},
     // store files to state 
     this.setState({...this.state,
                    files: droppedFiles,
-                   isLoaded: true,
                    isUploading: true})
  
     // Use FileReader to read file content
@@ -110,6 +111,7 @@ export class FileProcessor extends React.Component<{},
                      .then((value) => {
 
                         this.setState({...this.state,
+                                       isLoaded: true,
                                        isUploading: false})
 
                      })
@@ -189,7 +191,7 @@ export class FileProcessor extends React.Component<{},
           ) : (
 
             <div>
-              {!this.state.isLoaded || !this.state.isUploading ? (
+              {!this.state.isLoaded || this.state.isUploading ? (
                 <div>
 
                     <div className="file_div">
