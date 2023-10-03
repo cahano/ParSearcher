@@ -46,7 +46,7 @@ export class FileProcessor extends React.Component<{},
     const browse_files = event.target.files;
     // Setting uploaded file state
     this.setState({...this.state,
-                   isLoaded: true,
+                   isUploading: true,
                    files: Array.from(browse_files)})
 
     // Loop through updated files
@@ -59,6 +59,12 @@ export class FileProcessor extends React.Component<{},
       // make a POST request to the File Upload API
       axiosPDFPost(formData,
                    "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
+                   .then((value) => {
+
+                    this.setState({...this.state,
+                                   isUploading: false})
+
+                 })
     })
   };
 
