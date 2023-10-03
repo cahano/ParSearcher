@@ -189,7 +189,7 @@ export class FileProcessor extends React.Component<{},
           ) : (
 
             <div>
-              {!this.state.isLoaded && this.state.isUploading ? (
+              {!this.state.isLoaded || !this.state.isUploading ? (
                 <div>
 
                     <div className="file_div">
