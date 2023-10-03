@@ -3,7 +3,7 @@
 //
 
 import * as React from "react"
-import { DragEvent, useState } from 'react';
+import { DragEvent } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import { axiosPDFPost } from "../api/upload-api"
@@ -153,35 +153,39 @@ export class FileProcessor extends React.Component<{},
       // Entire output div
       <div>
 
-          {/* Uploads (drag & drop, browse) */}
-          <div
-            className="drag_box"
-            style={{
-              backgroundColor: this.state.isOver ? '#222222' : '#161616',
-            }}
-            onDragOver={this.handleDragOver}
-            onDragLeave={this.handleDragLeave}
-            onDrop={this.handleDrop}
-          >
+        {/* Uploads (drag & drop, browse) */}
+        <div
+          className="drag_box"
+          style={{
+            backgroundColor: this.state.isOver ? '#222222' : '#161616',
+          }}
+          onDragOver={this.handleDragOver}
+          onDragLeave={this.handleDragLeave}
+          onDrop={this.handleDrop}
+        >
 
             <div className="drag_txt">
-              <h2>Drag PDF files here</h2>
+              < h2>Drag PDF files here</h2>
             </div>
 
             <div className='browse_txt'>
-              <label htmlFor="file_upload" className="custom-file-upload">
-                  or browse
-              </label>
-              <input id="file_upload"
-                    type="file"
-                    accept=".pdf"
-                    onChange={this.handleBrowseUpload}
-                    multiple />
+                <label htmlFor="file_upload" className="custom-file-upload">
+                    or browse
+                </label>
+                <input id="file_upload"
+                      type="file"
+                      accept=".pdf"
+                      onChange={this.handleBrowseUpload}
+                      multiple />
             </div>
 
-          </div>
+        </div>
+
+        {/* upload file table, parse button, and state display */}
         <div className="btm_div">
+
             <div className="table_p_btn">
+              
               {/* Upload results and parse section (bottom div) */}
               <div>
 
@@ -237,7 +241,7 @@ export class FileProcessor extends React.Component<{},
                           </table>
                       </div>
 
-                      {/* DISABLED IF PARSING */}
+                      {/* Button state handling */}
                       <div>
 
                         {this.state.isParsing ? (
@@ -305,7 +309,7 @@ export class FileProcessor extends React.Component<{},
                         ) : (
 
                           <div>
-                              
+                              {/* CAN ADD MORE STATE LOGIC HERE, ABOVE FOR BEFORE/AFTER UPLOADS */}
                           </div>
 
                         )}
