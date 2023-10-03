@@ -14,15 +14,17 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
                         "Content-Type": "application/pdf",
                         },
                     }
-                    ).then((response) => {
-                        // handle the response
-                        // Manage state here
-                        console.log(response);
-                    })
-                    .catch((error) => {
-                        // handle errors
-                        console.log(error);
-                    });
+                    )
+
+                    // .then((response) => {
+                    //     // handle the response
+                    //     // Manage state here
+                    //     console.log(response);
+                    // })
+                    // .catch((error) => {
+                    //     // handle errors
+                    //     console.log(error);
+                    // });
 
     return Promise.resolve()
 
