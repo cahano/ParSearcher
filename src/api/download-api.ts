@@ -20,41 +20,43 @@ let apiTimeout = setTimeout(PollFileDownload, 5000);
 
 export async function PollFileDownload(url: string): Promise<void>{
 
-            const res = await axios.get(url,
-                                    { responseType: 'arraybuffer' })
+    const res = await axios.get(url,
+                            { responseType: 'arraybuffer' })
 
-            console.log(res.status == 200)
+    console.log(res.status == 200)
 
-            if (res.status == 200) {
+    if (res.status == 200) {
 
-                console.log('FILE DONWLOAD DATA')
-                console.log(res.status)
-            
-                // Blob object for storing output xlsx contents
-                const blob = new Blob([res.data],
-                                    { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
-            
-                // Creating download link element
-                const URL = window.URL.createObjectURL(blob);
-                const output_el = document.createElement('a');
-                output_el.href = URL;
-            
-                // Simulating link click
-                output_el.download = 'parsed_output.xlsx';
-                output_el.click();
+        console.log('FILE DONWLOAD DATA')
+        console.log(res.status)
 
-                apiTimeout = setTimeout(PollFileDownload, 5000);
+        // Blob object for storing output xlsx contents
+        const blob = new Blob([res.data],
+                            { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
 
-                return Promise.resolve()
-                
+        // Creating download link element
+        const URL = window.URL.createObjectURL(blob);
+        const output_el = document.createElement('a');
+        output_el.href = URL;
 
-            }else{
+        // Simulating link click
+        output_el.download = 'parsed_output.xlsx';
+        output_el.click();
 
-                clearTimeout(apiTimeout);
-                // Failure case. If required, alert the user.
+        // clearTimeout(apiTimeout);
 
-            }
-};
+        return Promise.resolve()
+        
+
+    }else{
+
+        // clearTimeout(apiTimeout);
+        // If not 200, rerun I think?
+        apiTimeout = setTimeout(PollFileDownload, 5000);
+        // Failure case. If required, alert the user.
+
+    }
+    };
 
 
 // export async function FileDownload(url: string): Promise<void> {
