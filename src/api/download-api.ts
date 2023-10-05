@@ -5,26 +5,77 @@
 import axios from 'axios';
 
 
-export async function FileDownload(url: string): Promise<void> {
+// Initiaties py-side parsing
+export async function StartPyParse(url: string): Promise<void> {
 
-    const res = await axios.get(url,
-                                { responseType: 'arraybuffer' })
+    await axios.post(url)
+    return Promise.resolve()
 
-    console.log('FILE DONWLOAD DATA')
-    console.log(res.data)
-
-    // Blob object for storing output xlsx contents
-    const blob = new Blob([res.data],
-                          { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
-
-    // Creating download link element
-    const URL = window.URL.createObjectURL(blob);
-    const output_el = document.createElement('a');
-    output_el.href = URL;
-
-    // Simulating link click
-    output_el.download = 'parsed_output.xlsx';
-    output_el.click();
-
-    return Promise.resolve();
 }
+
+
+// Attempting to ping tornado api until response code is correct
+
+let apiTimeout = setTimeout(PollFileDownload, 1000);
+
+export async function PollFileDownload(url: string): Promise<void>{
+
+            const res = await axios.get(url,
+                                    { responseType: 'arraybuffer' })
+
+            if (res.status == 200) {
+
+                console.log('FILE DONWLOAD DATA')
+                console.log(res.status)
+            
+                // Blob object for storing output xlsx contents
+                const blob = new Blob([res.data],
+                                    { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
+            
+                // Creating download link element
+                const URL = window.URL.createObjectURL(blob);
+                const output_el = document.createElement('a');
+                output_el.href = URL;
+            
+                // Simulating link click
+                output_el.download = 'parsed_output.xlsx';
+                output_el.click();
+
+                apiTimeout = setTimeout(PollFileDownload, 1000);
+
+                return Promise.resolve()
+                
+
+            }else{
+
+                clearTimeout(apiTimeout);
+                // Failure case. If required, alert the user.
+
+            }
+};
+
+
+// export async function FileDownload(url: string): Promise<void> {
+
+//     const res = await axios.get(url,
+//                                 { responseType: 'arraybuffer' })
+
+//     console.log('FILE DONWLOAD DATA')
+//     console.log(res.data)
+
+//     // Blob object for storing output xlsx contents
+//     const blob = new Blob([res.data],
+//                           { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },)
+
+//     // Creating download link element
+//     const URL = window.URL.createObjectURL(blob);
+//     const output_el = document.createElement('a');
+//     output_el.href = URL;
+
+//     // Simulating link click
+//     output_el.download = 'parsed_output.xlsx';
+//     output_el.click();
+
+//     return Promise.resolve();
+// }
+
