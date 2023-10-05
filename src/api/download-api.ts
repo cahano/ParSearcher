@@ -8,7 +8,7 @@ import axios from 'axios';
 // Initiaties py-side parsing
 export async function StartPyParse(url: string): Promise<void> {
 
-    await axios.post(url)
+    await axios.get(url)
     return Promise.resolve()
 
 }
@@ -16,12 +16,14 @@ export async function StartPyParse(url: string): Promise<void> {
 
 // Attempting to ping tornado api until response code is correct
 
-let apiTimeout = setTimeout(PollFileDownload, 1000);
+let apiTimeout = setTimeout(PollFileDownload, 5000);
 
 export async function PollFileDownload(url: string): Promise<void>{
 
             const res = await axios.get(url,
                                     { responseType: 'arraybuffer' })
+
+            console.log(res.status == 200)
 
             if (res.status == 200) {
 
@@ -41,7 +43,7 @@ export async function PollFileDownload(url: string): Promise<void>{
                 output_el.download = 'parsed_output.xlsx';
                 output_el.click();
 
-                apiTimeout = setTimeout(PollFileDownload, 1000);
+                apiTimeout = setTimeout(PollFileDownload, 5000);
 
                 return Promise.resolve()
                 
