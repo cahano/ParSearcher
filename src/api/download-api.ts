@@ -50,6 +50,8 @@ export async function PollFileDownload(url: string): Promise<void>{
 
     }else{
 
+        console.log('RE-POLLING DOWNLOAD API')
+
         clearTimeout(apiTimeout);
         // If not 200, rerun I think?
         // apiTimeout = setTimeout(PollFileDownload, 5000);
