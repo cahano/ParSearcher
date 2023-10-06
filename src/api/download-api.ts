@@ -43,7 +43,7 @@ export async function PollFileDownload(url: string): Promise<void>{
         output_el.download = 'parsed_output.xlsx';
         output_el.click();
 
-        // clearTimeout(apiTimeout);
+        clearTimeout(apiTimeout);
 
         return Promise.resolve()
         
@@ -54,7 +54,7 @@ export async function PollFileDownload(url: string): Promise<void>{
 
         // clearTimeout(apiTimeout);
         // If not 200, rerun I think?
-        apiTimeout = setTimeout(PollFileDownload, 5000);
+        setTimeout(PollFileDownload, 5000);
         // Failure case. If required, alert the user.
 
     }
