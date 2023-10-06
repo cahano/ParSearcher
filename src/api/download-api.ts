@@ -16,9 +16,9 @@ export async function StartPyParse(url: string): Promise<void> {
 
 // Attempting to ping tornado api until response code is correct
 
-let apiTimeout = setTimeout(PollFileDownload, 5000);
-
 export async function PollFileDownload(url: string): Promise<void>{
+
+    let apiTimeout = setTimeout(PollFileDownload, 5000);
 
     const res = await axios.get(url,
                             { responseType: 'arraybuffer' })
@@ -54,7 +54,7 @@ export async function PollFileDownload(url: string): Promise<void>{
 
         // clearTimeout(apiTimeout);
         // If not 200, rerun I think?
-        setTimeout(PollFileDownload, 5000);
+        apiTimeout = setTimeout(PollFileDownload, 5000);
         // Failure case. If required, alert the user.
 
     }
