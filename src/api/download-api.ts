@@ -54,7 +54,8 @@ export async function PollFileDownload(url: string): Promise<void>{
 
         // clearTimeout(apiTimeout);
         // If not 200, rerun I think?
-        apiTimeout = setTimeout(PollFileDownload, 5000);
+        // ATTEMPTING RECURSIVE STRUCTURE
+        PollFileDownload(url);
         // Failure case. If required, alert the user.
 
     }
