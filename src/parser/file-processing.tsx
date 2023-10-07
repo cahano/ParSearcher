@@ -30,6 +30,7 @@ export class FileProcessor extends React.Component<{},
       isLoaded: false,
       isUploading: false,
       isFin: false,
+      isParsing: false
     }
 
     // Binding events
