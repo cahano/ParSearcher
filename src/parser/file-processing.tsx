@@ -135,22 +135,27 @@ export class FileProcessor extends React.Component<{},
 
     console.log(this.state.isParsing)
 
+    this.setState({
+      ...this.state,
+      isParsing: true
+    })
+
     // Parse uploaded pdf docs, and once complete, update parse state
     // Connect to Heroku app
     StartPyParse('https://parsearcher-api-c4c5fa341782.herokuapp.com/parse')
-                .then((value) => {
-                      // Setting parser state so loading icon is displayed
-                        this.setState({...this.state,
-                                      isParsing: true})
-                })
+                // .then((value) => {
+                //       // Setting parser state so loading icon is displayed
+                //         this.setState({...this.state,
+                //                       isParsing: true})
+                // })
 
     console.log(this.state.isParsing)
 
     // NOW NEED TO PING A NEW TORNADO API THAT CHECKS FOR THE FILE
     DownloadPoll('https://parsearcher-api-c4c5fa341782.herokuapp.com/download', 5000)
                 .then(() => {
-                      this.setState({...this.state,
-                                      isParsing: false})
+                        this.setState({...this.state,
+                                        isParsing: false})
                 })
 
     console.log(this.state.isParsing)
