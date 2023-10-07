@@ -22,13 +22,11 @@ const timeout = (time:any) =>
 
 
 
-export function DownloadPoll(url: string, time: any): Promise<void> {
-
+export async function DownloadPoll(url: string, time: any): Promise<void> {
 
     let polling = true;
 
     (async function doPolling() {
-
 
         while (polling) {
 
@@ -42,7 +40,7 @@ export function DownloadPoll(url: string, time: any): Promise<void> {
                     let result = res;
                 }
                 if (polling && res.status === 200) {
-                    stopPolling()
+                    stopPolling();
                     // Blob object for storing output xlsx contents
                     const blob = new Blob([res.data],
                                         { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },);
@@ -70,7 +68,7 @@ export function DownloadPoll(url: string, time: any): Promise<void> {
         }
     }
 
-    stopPolling();
+    // stopPolling();
     return Promise.resolve();
 
 }
