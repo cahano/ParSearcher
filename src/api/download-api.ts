@@ -36,11 +36,9 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
                 if (polling) {
                     await timeout(time);
                 }
-                if (polling) {
-                    let result = res;
-                }
                 if (polling && res.status === 200) {
                     stopPolling();
+                    console.log('POLLING STOPPED - DOWNLOADING')
                     // Blob object for storing output xlsx contents
                     const blob = new Blob([res.data],
                                         { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },);
