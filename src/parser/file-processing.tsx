@@ -151,7 +151,7 @@ export class FileProcessor extends React.Component<{},
 
     console.log(this.state.isParsing)
 
-    // NOW NEED TO PING A NEW TORNADO API THAT CHECKS FOR THE FILE
+    // Ping tornado 'download' api
     DownloadPoll('https://parsearcher-api-c4c5fa341782.herokuapp.com/download', 5000)
                 .then(() => {
                         this.setState({...this.state,
