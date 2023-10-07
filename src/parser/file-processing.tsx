@@ -135,10 +135,12 @@ export class FileProcessor extends React.Component<{},
 
     console.log(this.state.isParsing)
 
-    this.setState({
-      ...this.state,
-      isParsing: true
-    })
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        isParsing: true
+      };
+    });
 
     // Parse uploaded pdf docs, and once complete, update parse state
     // Connect to Heroku app
@@ -228,7 +230,7 @@ export class FileProcessor extends React.Component<{},
                       {/* Parse button */}
                       <div className="parse_btn">
                         <button type="submit"
-                                onClick={(event) => this.handleDownload}
+                                onClick={(event) => this.handleDownload()}
                                 disabled>
                           Parse
                         </button>
@@ -266,7 +268,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload}
+                                    onClick={(event) => this.handleDownload()}
                                     disabled>
                               Parse
                             </button>
@@ -276,7 +278,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload}>
+                                    onClick={(event) => this.handleDownload()}>
                               Parse
                             </button>
                         </div>
