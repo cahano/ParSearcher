@@ -131,7 +131,7 @@ export class FileProcessor extends React.Component<{},
 
 
   // HANDLING DOWNLOAD
-  public handleDownload = () => {
+  public handleDownload() {
 
     console.log(this.state.isParsing)
 
@@ -226,7 +226,7 @@ export class FileProcessor extends React.Component<{},
                       {/* Parse button */}
                       <div className="parse_btn">
                         <button type="submit"
-                                onClick={(event) => this.handleDownload()}
+                                onClick={(event) => this.handleDownload}
                                 disabled>
                           Parse
                         </button>
@@ -264,7 +264,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload()}
+                                    onClick={(event) => this.handleDownload}
                                     disabled>
                               Parse
                             </button>
@@ -274,7 +274,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload()}>
+                                    onClick={(event) => this.handleDownload}>
                               Parse
                             </button>
                         </div>
