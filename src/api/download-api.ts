@@ -51,6 +51,9 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
                     // Simulating link click
                     output_el.download = 'parsed_output.xlsx';
                     output_el.click();
+
+                    // returning promise here so state only update once download occurs
+                    return Promise.resolve();
                 }
             } catch (e) {
                 stopPolling();
@@ -67,9 +70,6 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
             console.log('POLLING ALREADY STOPPED - stopPolling');
         }
     }
-
-    // stopPolling();
-    return Promise.resolve();
 
 }
 
