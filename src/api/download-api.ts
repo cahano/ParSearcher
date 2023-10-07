@@ -26,7 +26,7 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
 
     let polling = true;
 
-    (async function doPolling() {
+    await (async function doPolling() {
 
         while (polling) {
 
