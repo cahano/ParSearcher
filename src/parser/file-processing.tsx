@@ -131,7 +131,7 @@ export class FileProcessor extends React.Component<{},
 
 
   // HANDLING DOWNLOAD
-  public handleDownload() {
+  public handleDownload = () => {
 
     console.log(this.state.isParsing)
 
