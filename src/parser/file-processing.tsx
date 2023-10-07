@@ -43,7 +43,7 @@ export class FileProcessor extends React.Component<{},
   }
  
 
-  //////// FOR HANDLING 'BROWSE' BUTTOM UPLOAD
+  //////// FOR HANDLING 'BROWSE' BUTTON UPLOAD
 
   public handleBrowseUpload (event: any) {
     // get the selected file(s) from the input
@@ -74,7 +74,7 @@ export class FileProcessor extends React.Component<{},
   };
 
 
-  //////// FOR HANDLING DRAG & DROP BUTTOM UPLOAD
+  //////// FOR HANDLING DRAG & DROP UPLOAD
 
   // Define the event handlers
   public handleDragOver = (event: DragEvent<HTMLDivElement>) => {
@@ -133,39 +133,22 @@ export class FileProcessor extends React.Component<{},
   // HANDLING DOWNLOAD
   public handleDownload() {
 
-    console.log(this.state.isParsing)
-
-    // this.setState(prevState => {
-    //   return {
-    //     ...prevState,
-    //     isParsing: true
-    //   };
-    // });
-
+    // Displaying 'parser' message/visual
     this.setState({
       ...this.state,
       isParsing: true
     })
 
-    // Parse uploaded pdf docs, and once complete, update parse state
-    // Connect to Heroku app
+    // Initiate parsing of uploaded doc(s)
     StartPyParse('https://parsearcher-api-c4c5fa341782.herokuapp.com/parse')
-                // .then((value) => {
-                //       // Setting parser state so loading icon is displayed
-                //         this.setState({...this.state,
-                //                       isParsing: true})
-                // })
 
-    console.log(this.state.isParsing)
-
-    // Ping tornado 'download' api
+    // Ping tornado 'download' api until downloadable is present, then download
+    //// And update state to remove 'parsing' display once complete
     DownloadPoll('https://parsearcher-api-c4c5fa341782.herokuapp.com/download', 5000)
                 .then(() => {
                         this.setState({...this.state,
                                         isParsing: false})
                 })
-
-    console.log(this.state.isParsing)
 
   }
   
