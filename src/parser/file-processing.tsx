@@ -7,7 +7,7 @@ import { DragEvent } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import { axiosPDFPost } from "../api/upload-api"
-import { StartPyParse, PollFileDownload } from '../api/download-api'
+import { StartPyParse, DownloadPoll } from '../api/download-api'
 
 import { numberWithCommas } from "../constants";
 import './static/file-processing.css';
@@ -143,7 +143,7 @@ export class FileProcessor extends React.Component<{},
                 // })
 
     // NOW NEED TO PING A NEW TORNADO API THAT CHECKS FOR THE FILE
-    PollFileDownload('https://parsearcher-api-c4c5fa341782.herokuapp.com/download')
+    DownloadPoll('https://parsearcher-api-c4c5fa341782.herokuapp.com/download', 5000)
                 .then(() => {
                                     this.setState({...this.state,
                                                    isParsing: false})
