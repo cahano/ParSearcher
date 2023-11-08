@@ -1,22 +1,19 @@
 //
-// Parsearch Homepage
+// Parsearch Login
 //
 
 import React from 'react'
-import './static/HomePage.css';
+import './static/loginPage.css';
 import { Pagefooter } from '../constants'
 
 
-class HomePage extends React.Component {
+class LoginPage extends React.Component {
   render() {
       return (
 
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a className="active" href="./#">Home</a>
-          <a href="./#/parser">Parser</a>
-          <a href="./#/team">Team</a>
         </div>
 
         <div className="home_frame">
@@ -30,11 +27,7 @@ class HomePage extends React.Component {
 
             <br />
 
-            <p>No, it isn't. </p>
-            <p>PDF parsing is the foundation of any models intending to use it,
-               and after seeing the many failures of current parsing techniques and understanding
-               the ubiquity of the PDF, a far more precise alternative was needed - for <i>every</i> LLM
-               use-case involving PDFs.</p>
+            <p>LOGIN STUFF</p>
 
           </div>
 
@@ -47,4 +40,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default LoginPage;

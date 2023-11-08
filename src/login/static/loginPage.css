@@ -1,0 +1,46 @@
+
+/* login styles */
+
+.home_frame {
+
+    /* centering div */
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+
+    margin: auto;
+    width: 50vw;
+    height: 37vh;
+    color: aliceblue;
+    background-color: #161616;
+    display: flex;
+    border-radius: 3px;
+    display: flex;
+
+}
+
+.home_text {
+
+    text-align: left;
+    margin: auto;
+    margin-top: 0vh;
+    width: 45vw;
+    height: 37vh;
+    color: rgb(214, 218, 215);
+    background-color: #161616;
+    font-size: 1.70vh;
+
+}
+.home_text h4 {
+
+    margin-bottom: -1vh;
+}
+
+
+.ver {
+
+    font-size: 1.70vh;
+
+}

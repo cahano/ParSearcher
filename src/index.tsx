@@ -5,6 +5,7 @@ import './index.css';
 import DocParser from './parser/DocParser';
 import TeamPage from './team/TeamPage';
 import HomePage from './home/HomePage';
+import LoginPage from './login/loginPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -17,6 +18,8 @@ export default function Parsearch() {
     <HashRouter basename='/'>
       <Routes>
 
+          <Route path="/login" element={<LoginPage />} />
+          {/* MAKING HOME DEFAULT FOR NOW -- WILL CHANGE */}
           <Route path="/" element={<HomePage />} />
           <Route path="/parser" element={<DocParser />} />
           <Route path="/team" element={<TeamPage />} />
