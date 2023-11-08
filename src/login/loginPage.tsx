@@ -29,6 +29,7 @@ const LoginPage: React.FC = () => {
         <div className="whole_main_page">
 
         <div className='main_navbar'>
+          <a href="./#">Home</a>
         </div>
 
         <div className="login_frame">
@@ -53,8 +54,10 @@ const LoginPage: React.FC = () => {
                            onChange={(event) => setPwrd(event.target.value)}
                            placeholder="Password"/>
 
+                    {/* Conditionally disabling button */}
                     {user.length > 1 && pwrd.length > 1 ? (<div><button type="submit">Login</button></div>) 
                     : (<div><button type="submit" disabled>Login</button></div>)}
+
                 </form>
 
             </div>

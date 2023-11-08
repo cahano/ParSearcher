@@ -37,13 +37,15 @@ class HomePage extends React.Component {
 
             <h1>ParSearch <span className="ver">0.1.0</span></h1>
 
+            <p>Prepare your data for the future.</p>
+
           </div>
 
             <div className="home_links">
 
                 <button className="login_link" onClick={this.loginLink}>Client Login</button>
 
-                <button className="team_link" onClick={this.teamLink}>About</button>
+                <button className="team_link" onClick={this.teamLink}>Project</button>
 
             </div>
 

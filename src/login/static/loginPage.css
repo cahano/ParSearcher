@@ -4,7 +4,7 @@
 .login_frame {
 
     margin: auto;
-    width: 35vw;
+    width: 20vw;
     background-color: #161616;
     border-radius: 3px;
 
@@ -59,7 +59,8 @@
     border: none;
     border-radius: 0.5vh;
     font-weight: bold;
-    font-size: 1.5vh;
+    font-size: 1.45vh;
+    font-family: Tahoma, sans-serif
 
 }
 .user_form button:hover {

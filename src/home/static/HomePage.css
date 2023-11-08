@@ -10,8 +10,7 @@
     align-items: center;
     
     margin: auto;
-    width: 30vw;
-    height: 20vh;
+    width: 25vw;
     color: aliceblue;
     background-color: #161616;
     display: flex;
@@ -25,8 +24,6 @@
     text-align: center;
     margin: auto;
     margin-top: 0vh;
-    width: 30vw;
-    height: 37vh;
     color: rgb(214, 218, 215);
     background-color: #161616;
     font-size: 1.70vh;
@@ -35,6 +32,11 @@
 .home_text h4 {
 
     margin-bottom: -1vh;
+}
+.home_text p {
+
+    margin-top: -1.5vh;
+    height: 3.5vh;
 }
 
 
@@ -46,7 +48,7 @@
 
 .home_links {
 
-    height: 40vh;
+    height: 9vh;
     align-items: center;
 
 }
@@ -60,6 +62,7 @@
     border-radius: 0.5vh;
     font-weight: bold;
     font-size: 1.5vh;
+    font-family: Tahoma, sans-serif;
 
 }
 .home_links button:hover {
@@ -69,11 +72,11 @@
 }
 .login_link {
 
-    margin-right: 2vw;
+    margin-right: 4vw;
 
 }
 .team_link {
 
-    margin-right: 2vw;
+    /* margin-right: 2vw; */
 
 }
