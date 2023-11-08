@@ -34,9 +34,11 @@ class InquirePage extends React.Component {
           <div className="inquire_text">
 
             <h1>Inquire</h1>
-            <p>If any of your business data ingestion pipelines require human intervention,
-                it's time for a change - as cutting edge technologies continue to evolve more rapidly than ever,
-                <i> the quality of business data processing is business survival</i>.</p>
+            <p>If any of your data ingestion pipelines require human intervention,
+                it's time for a change - as cutting edge technologies continue to evolve more rapidly than ever
+                and drive value,<i> the quality of business data processing is business survival</i>.</p>
+
+            <p>Reach out. Your competition will.</p>
 
             <ul>
                 <li>inquire@OurBusinessEmail.com</li>
