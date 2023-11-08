@@ -15,9 +15,9 @@ class DocParser extends React.Component {
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="./#/">Home</a>
           <a className="active" href="./#/parser">Parser</a>
-          <a href="./#/team">Team</a>
+          <a href="./#/team">Deal Repos</a>
+          <a href="./#/team">Analytics</a>
         </div>
 
         <div className="main_frame">

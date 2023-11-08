@@ -7,37 +7,55 @@ import './static/loginPage.css';
 import { Pagefooter } from '../constants'
 
 
-class LoginPage extends React.Component {
-  render() {
-      return (
+const LoginPage: React.FC = () => {
+    const [user, setUser] = React.useState('');
+    const [pwrd, setPwrd] = React.useState('');
+  
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      console.log('username:', user);
+      console.log('password:', pwrd);
+      // On form submit, client is brought to parser
+      if (typeof window !== 'undefined') {
+        window.location.href = "/#/parser";
+        }
+    };
 
-      <div className="whole_main_page">
+    return (
+
+        <div className="whole_main_page">
 
         <div className='main_navbar'>
         </div>
 
-        <div className="home_frame">
+        <div className="login_frame">
 
-          <div className="home_text">
+            <div className="welcome_text">
 
-            <h1>ParSearch <span className="ver">0.1.0</span></h1>
+                <h1>Welcome</h1>
 
-            <h4>Our purpose in a single question:</h4> <p><i> If even 10% of each of the millions of PDF's contents on which you train are
-                innaccurately parsed, is the resulting AI model reliable?</i></p>
+            </div>
 
-            <br />
+            <div className="user_form">
 
-            <p>LOGIN STUFF</p>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" value={user} onChange={(event) => setUser(event.target.value)} />
 
-          </div>
+                    <input type="password" value={pwrd} onChange={(event) => setPwrd(event.target.value)} />
+
+                    <button type="submit">Login</button>
+                </form>
+
+            </div>
 
         </div>
         
         <Pagefooter />
 
-      </div>
+        </div>
+
     );
-  }
 }
+
 
 export default LoginPage;

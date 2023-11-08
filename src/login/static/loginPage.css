@@ -1,46 +1,60 @@
 
 /* login styles */
 
-.home_frame {
-
-    /* centering div */
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+.login_frame {
 
     margin: auto;
-    width: 50vw;
-    height: 37vh;
-    color: aliceblue;
+    width: 35vw;
     background-color: #161616;
-    display: flex;
     border-radius: 3px;
+
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(137, 137, 255);
+    font-size: 1.6vh;
+
 
 }
 
-.home_text {
+.welcome_text {
 
-    text-align: left;
-    margin: auto;
-    margin-top: 0vh;
-    width: 45vw;
-    height: 37vh;
-    color: rgb(214, 218, 215);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(137, 137, 255);
+    font-size: 1.9vh;
+
+}
+
+.user_form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+  
+.user_form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+  
+.user_form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
     background-color: #161616;
-    font-size: 1.70vh;
-
+    color: rgb(137, 137, 255);
 }
-.home_text h4 {
-
-    margin-bottom: -1vh;
+  
+.user_form button {
+    background-color: rgb(137, 137, 255);
+    color: #161616;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 
-.ver {
-
-    font-size: 1.70vh;
-
-}
