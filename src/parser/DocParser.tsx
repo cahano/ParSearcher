@@ -15,8 +15,8 @@ class DocParser extends React.Component {
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="./#">Logout</a>
           <a className="active" href="./#/parser">Parser</a>
+          <a className="logout" href="./#">Logout</a>
           {/* REMOVING THESE UNTIL NEXT PHASE */}
           {/* <a href="./#/team">Deal Repos</a>
           <a href="./#/team">Analytics</a> */}

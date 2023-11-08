@@ -14,7 +14,6 @@ body {
   margin: auto;
   margin-top: 0vh;
   width: 50vw;
-  height: 71vh;
   color: aliceblue;
   background-color: #161616;
   display: flex;
@@ -28,10 +27,16 @@ body {
   text-align: left;
   margin: auto;
   margin-top: 0vh;
+  margin-bottom: 2vh;
   width: 45vw;
-  height: 5vh;
   color: rgb(214, 218, 215);
   background-color: #161616;
+
+}
+.about_text a {
+
+  font-size: 0.85vw;
+  color: rgb(137, 137, 255);
 
 }
 

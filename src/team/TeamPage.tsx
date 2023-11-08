@@ -21,15 +21,19 @@ class TeamPage extends React.Component {
 
           <div className="about_text">
 
-            <h1>Our purpose in a single question</h1>
-            <p><i> If even 10% of each of the millions of PDF's contents on which you train are
-                  innaccurately parsed, is the resulting AI model reliable?</i></p>
+            <h1>Our Purpose, Simply</h1>
+            <p><i>Bring the future to enterprise data.</i></p>
 
-              <p>No, it isn't. </p>
-              <p>PDF parsing is the foundation of any models intending to use it,
-                and after seeing the many failures of current parsing techniques and understanding
-                the ubiquity of the PDF, a far more precise alternative was needed - for <i>every</i> LLM
-                use-case involving PDFs.</p>
+            <p>Many, multi-trillion dollar industries are stricken with foundational data stored innaccesibly to
+              algorithmic tools of today. Worse yet, these foundational data structures require hours of manual work
+              for even the simplest of analyses.
+            </p>
+
+            <p>We seek to free market participants from the data structures bounding them to the past,
+              and introduce to them technologies of the future.
+            </p>
+
+            <p>Sound relevant to your firm? <a href="./#/inquire">Inquire</a></p>
 
             <br />
 

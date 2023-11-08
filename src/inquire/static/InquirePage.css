@@ -1,0 +1,58 @@
+/* .App {
+  text-align: center;
+  background-color: #282c34;
+} */
+
+/* Setting primary color */
+body {
+    background-color: #282c34;
+  }
+  
+  
+  .inquire_frame {
+  
+    margin: auto;
+    margin-top: 0vh;
+    width: 50vw;
+    color: aliceblue;
+    background-color: #161616;
+    display: flex;
+    border-radius: 0.2vw;;
+    font-size: 1.75vh;
+  
+  }
+  
+  .inquire_text {
+  
+    text-align: left;
+    margin: auto;
+    margin-bottom: 3vh;
+
+    width: 45vw;
+    color: rgb(214, 218, 215);
+    background-color: #161616;
+  
+  }
+  .inquire_text ul {
+  
+    margin-top: 3vh;
+
+  }
+  .inquire_text li {
+  
+    margin-bottom: 1vh;
+
+  }
+  
+  .member {
+  
+    margin-bottom: 3vh;
+  
+  }
+  
+  .member h2 {
+  
+    margin-bottom: -1.2vh;
+  
+  }
+  

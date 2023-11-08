@@ -58,15 +58,6 @@
     background-color: rgb(137, 137, 255);
     border: none;
     border-radius: 0.5vh;
-    font-weight: bold;
-    font-size: 1.45vh;
-    font-family: Tahoma, sans-serif
 
 }
-.user_form button:hover {
-
-    border: 0.15vw rgb(99, 99, 99) solid;
-
-}
-
 

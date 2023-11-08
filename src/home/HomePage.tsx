@@ -23,6 +23,13 @@ class HomePage extends React.Component {
       }
   }
 
+  public inquireLink() {
+    // On button click, client is brought to login
+    if (typeof window !== 'undefined') {
+      window.location.href = "./#/inquire";
+      }
+  }
+
   render() {
       return (
 
@@ -43,9 +50,11 @@ class HomePage extends React.Component {
 
             <div className="home_links">
 
+                <button className="team_link" onClick={this.teamLink}>Project</button>
+
                 <button className="login_link" onClick={this.loginLink}>Client Login</button>
 
-                <button className="team_link" onClick={this.teamLink}>Project</button>
+                <button className="inquire_link" onClick={this.inquireLink}>Inquire</button>
 
             </div>
 

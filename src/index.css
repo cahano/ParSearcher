@@ -19,7 +19,7 @@ code {
 
   overflow: hidden;
   background-color: #161616;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0vw 1vh 1vh;
   border-radius: 0.2vw;
   width: 100vw;
   height: 3.75vh;
@@ -49,7 +49,7 @@ code {
   color: rgb(137, 137, 255);
   background-color: #4e4d4d;
   border-right: 0.1vw solid #000;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0vw 1vh 1vh;;
   font-weight: bold;
 
 }
@@ -60,15 +60,39 @@ code {
   color: rgb(137, 137, 255);
   background-color: #4e4d4d;
   border-right: 0.1vw solid #000;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0vw 1vh 1vh;;
   font-weight: bold;
 
 }
+
+
+.logout {
+
+  float: right;
+
+}
+
 
 /* titles */
 h1 {
 
   color: rgb(137, 137, 255);
+
+}
+
+/* Formatting global button font family */
+button {
+
+  font-family:Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  font-size: 1.7vh;
+
+}
+button:hover {
+
+  border: 0.1vw rgb(99, 99, 99) solid !important;
+  font-weight: bolder !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0vw 1vh 1vh !important;
 
 }
 
