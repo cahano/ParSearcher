@@ -38,7 +38,7 @@ class InquirePage extends React.Component {
                 it's time for a change - as cutting edge technologies continue to evolve more rapidly than ever
                 and drive value,<i> the quality of business data processing is business survival</i>.</p>
 
-            <p>Reach out. Your competition will.</p>
+            <p>Reach out. We work hard to ensure your competition will.</p>
 
             <ul>
                 <li>inquire@OurBusinessEmail.com</li>
