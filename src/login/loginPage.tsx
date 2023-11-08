@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
       console.log('password:', pwrd);
       // On form submit, client is brought to parser
       if (typeof window !== 'undefined') {
-        window.location.href = "/#/parser";
+        window.location.href = "./#/parser";
         }
     };
 
