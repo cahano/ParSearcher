@@ -38,6 +38,11 @@ class InquirePage extends React.Component {
                 it's time for a change - as cutting edge technologies continue to evolve more rapidly than ever
                 and drive value,<i> the quality of business data processing is business survival</i>.</p>
 
+            <p>We collect critical data <u>of all formats</u> with industry-leading reliability
+              and create bespoke data pipelines optimized for integrating your business
+              with state-of-the-art AI/ML and LLM-based technologies.
+            </p>
+
             <p>Reach out. We work hard to ensure your competition will.</p>
 
             <ul>
