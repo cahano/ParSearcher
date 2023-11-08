@@ -15,6 +15,9 @@ const LoginPage: React.FC = () => {
       event.preventDefault();
       console.log('username:', user);
       console.log('password:', pwrd);
+
+      // ANY AUTH LOGIC GETS INITIATIED HERE USING THE ABOVE STATE VALS
+
       // On form submit, client is brought to parser
       if (typeof window !== 'undefined') {
         window.location.href = "./#/parser";
@@ -39,11 +42,19 @@ const LoginPage: React.FC = () => {
             <div className="user_form">
 
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={user} onChange={(event) => setUser(event.target.value)} />
 
-                    <input type="password" value={pwrd} onChange={(event) => setPwrd(event.target.value)} />
+                    <input type="text"
+                           value={user}
+                           onChange={(event) => setUser(event.target.value)}
+                           placeholder="Client ID" />
 
-                    <button type="submit">Login</button>
+                    <input type="password"
+                           value={pwrd}
+                           onChange={(event) => setPwrd(event.target.value)}
+                           placeholder="Password"/>
+
+                    {user.length > 1 && pwrd.length > 1 ? (<div><button type="submit">Login</button></div>) 
+                    : (<div><button type="submit" disabled>Login</button></div>)}
                 </form>
 
             </div>

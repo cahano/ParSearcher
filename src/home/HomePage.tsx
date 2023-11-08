@@ -8,6 +8,21 @@ import { Pagefooter } from '../constants'
 
 
 class HomePage extends React.Component {
+
+  public loginLink() {
+    // On button click, client is brought to login
+    if (typeof window !== 'undefined') {
+      window.location.href = "./#/login";
+      }
+  }
+
+  public teamLink() {
+    // On button click, client is brought to login
+    if (typeof window !== 'undefined') {
+      window.location.href = "./#/team";
+      }
+  }
+
   render() {
       return (
 
@@ -26,13 +41,9 @@ class HomePage extends React.Component {
 
             <div className="home_links">
 
-                <a href="./#/login">
-                  <button className="login_link">Client Login</button>
-                </a>
+                <button className="login_link" onClick={this.loginLink}>Client Login</button>
 
-                <a href="./#/team">
-                  <button className="team_link">About</button>
-                </a>
+                <button className="team_link" onClick={this.teamLink}>About</button>
 
             </div>
 
