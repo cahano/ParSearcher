@@ -34,9 +34,9 @@ class InquirePage extends React.Component {
           <div className="inquire_text">
 
             <h1>Inquire</h1>
-            <p>If any of your data ingestion pipelines require human intervention,
-                it's time for a change - as cutting edge technologies continue to evolve more rapidly than ever
-                and drive value,<i> the quality of business data processing is business survival</i>.</p>
+            <p>If your data ingestion pipelines require human intervention,
+                it's time for a change - as business intelligence capabilities evolve more rapidly than ever,
+                <i> the quality of foundational business data processing is foundational to business survival</i>.</p>
 
             <p>We collect critical data <u>of all formats</u> with industry-leading reliability
               and create bespoke data pipelines optimized for integrating your business
