@@ -46,7 +46,7 @@ class InquirePage extends React.Component {
             <p>Reach out. We work hard to ensure your competition will.</p>
 
             <ul>
-                <li>inquire@OurBusinessEmail.com</li>
+                <li>inquire@OurBusinessEmail911.com</li>
                 <li>+1-911-911-9119</li>
                 <li>Our, Business, Address</li>
             </ul>
