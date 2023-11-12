@@ -13,7 +13,7 @@ export const Pagefooter = () => {
     return (
         <div>
             <footer className='footer'>
-                <span>&copy; 2023 ParSearch</span>
+                <span>&copy; 2023 Caliburn</span>
             </footer>
         </div>
         )

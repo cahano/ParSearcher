@@ -42,7 +42,7 @@ class HomePage extends React.Component {
 
           <div className="home_text">
 
-            <h1>ParSearch <span className="ver">0.1.0</span></h1>
+            <h1>Caliburn <span className="ver">0.1.0</span></h1>
 
             <p>Prepare your data for the future.</p>
 
