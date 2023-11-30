@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { axiosPDFPost } from "../api/upload-api"
 import { StartPyParse, DownloadPoll } from '../api/download-api'
 
-import { numberWithCommas } from "../constants";
+import { numberWithCommas, API_URL } from "../constants";
 import './static/file-processing.css';
  
 
@@ -62,7 +62,7 @@ export class FileProcessor extends React.Component<{},
       formData.append("file", file);
       // make a POST request to the File Upload API
       axiosPDFPost(formData,
-                   "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
+                   API_URL + "upload")
                    .then((value) => {
 
                     this.setState({...this.state,
@@ -110,7 +110,7 @@ export class FileProcessor extends React.Component<{},
       reader.onloadend = () => {
         // Connect to Heroku app
         axiosPDFPost(formData,
-                     "https://parsearcher-api-c4c5fa341782.herokuapp.com/upload")
+                     API_URL + "upload")
                      .then((value) => {
 
                         this.setState({...this.state,
@@ -140,11 +140,11 @@ export class FileProcessor extends React.Component<{},
     })
 
     // Initiate parsing of uploaded doc(s)
-    StartPyParse('https://parsearcher-api-c4c5fa341782.herokuapp.com/parse')
+    StartPyParse(API_URL + 'parse')
 
     // Ping tornado 'download' api until downloadable is present, then download
     //// And update state to remove 'parsing' display once complete
-    DownloadPoll('https://parsearcher-api-c4c5fa341782.herokuapp.com/download', 5000)
+    DownloadPoll(API_URL + 'download', 5000)
                 .then(() => {
                         this.setState({...this.state,
                                         isParsing: false})
