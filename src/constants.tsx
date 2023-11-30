@@ -19,6 +19,8 @@ export const Pagefooter = () => {
         )
 }
 
+// URL Addresses for APIs //
+
 // URL for Brandon's local tornado
 export let API_URL:string = 'https://108.35.159.142:8888/'
 // URL for heroku tornado
