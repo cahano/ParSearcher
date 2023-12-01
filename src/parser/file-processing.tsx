@@ -53,7 +53,6 @@ export class FileProcessor extends React.Component<{},
                    isUploading: true,
                    files: Array.from(browse_files)})
 
-    console.log(API_URL + "upload");
     // Loop through updated files
     Array.from(browse_files).forEach((file: any) => {
       console.log(file)
