@@ -54,6 +54,7 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
                     const output_el = document.createElement('a');
                     output_el.href = URL;
                     // Simulating link click
+                    //// NEED TO MAKE THIS FILE NAME DYNAMIC - SAME AS INPUT NAME
                     output_el.download = 'parsed_output.xlsx';
                     output_el.click();
 
