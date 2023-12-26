@@ -1,4 +1,4 @@
-Copyright (C) 2022-2023 Caliburn Limited <owen_cahan@yahoo.com>
+Copyright (C) 2023-2024 Caliburn Limited <owen_cahan@yahoo.com>
 
 This file is part of the ParSearcher project.
 
