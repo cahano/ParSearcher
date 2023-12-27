@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { axiosPDFPost } from "../api/upload-api"
 import { StartPyParse, DownloadPoll } from '../api/download-api'
 
-import { numberWithCommas, API_URL } from "../constants";
+import { numberWithCommas, API_URL, CERT_URL } from "../constants";
 import './static/file-processing.css';
  
 
@@ -62,7 +62,8 @@ export class FileProcessor extends React.Component<{},
       formData.append("file", file);
       // make a POST request to the File Upload API
       axiosPDFPost(formData,
-                   API_URL + "upload")
+                  //  API_URL + "upload")
+                  CERT_URL)
                    .then((value) => {
 
                     this.setState({...this.state,
@@ -110,7 +111,8 @@ export class FileProcessor extends React.Component<{},
       reader.onloadend = () => {
         // Connect to Heroku app
         axiosPDFPost(formData,
-                     API_URL + "upload")
+                     //  API_URL + "upload"
+                     CERT_URL)
                      .then((value) => {
 
                         this.setState({...this.state,
