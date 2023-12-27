@@ -9,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* AWS styles.css extends body beyond page, so I am hiding overflow */
+  overflow: hidden;
 }
 
 code {

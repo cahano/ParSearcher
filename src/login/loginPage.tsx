@@ -6,6 +6,10 @@ import React from 'react'
 import './static/loginPage.css';
 import { Pagefooter } from '../constants'
 
+// Importing AWS auth widget
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
 
 const LoginPage: React.FC = () => {
     const [user, setUser] = React.useState('');
@@ -34,13 +38,26 @@ const LoginPage: React.FC = () => {
 
         <div className="login_frame">
 
+
+            {/* AWS Auth component */}
+            <Authenticator>
+                {({ signOut, user }) => (
+                    <div>
+                        <p>Welcome Idiot</p>
+                        <button onClick={signOut}>Sign out</button>
+                    </div>
+                )}
+            </Authenticator>
+
+            {/* OG AUTH COMPONENT */}
+            {/* 
             <div className="welcome_text">
 
                 <h1>Welcome</h1>
 
-            </div>
+            </div> */}
 
-            <div className="user_form">
+            {/* <div className="user_form">
 
                 <form onSubmit={handleSubmit}>
 
@@ -55,12 +72,12 @@ const LoginPage: React.FC = () => {
                            placeholder="Password"/>
 
                     {/* Conditionally disabling button */}
-                    {user.length > 1 && pwrd.length > 1 ? (<div><button type="submit">Login</button></div>) 
-                    : (<div><button type="submit" disabled>Login</button></div>)}
+                    {/* {user.length > 1 && pwrd.length > 1 ? (<div><button type="submit">Login</button></div>) 
+                    : (<div><button type="submit" disabled>Login</button></div>)} */}
 
-                </form>
+                {/* </form> */}
 
-            </div>
+            {/* </div> */} 
 
         </div>
         
