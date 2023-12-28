@@ -29,12 +29,13 @@ export async function axiosPDFPost(files: FormData, filename: string, url: strin
 
     let signed_url: string = cert_call.data
 
-    // Async post PDF data to api
+    // Async post PDF data to AWS S3
     await axios.post(signed_url,
                      files,
                      {
                         headers: {
                         "Content-Type": "application/pdf",
+                        'x-amz-acl': 'authenticated-read'
                         },
                      }
                     )
