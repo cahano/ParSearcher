@@ -63,7 +63,8 @@ export class FileProcessor extends React.Component<{},
       // make a POST request to the File Upload API
       axiosPDFPost(formData,
                   //  API_URL + "upload")
-                  CERT_URL)
+                  CERT_URL,
+                  file.name)
                    .then((value) => {
 
                     this.setState({...this.state,
@@ -112,7 +113,8 @@ export class FileProcessor extends React.Component<{},
         // Connect to Heroku app
         axiosPDFPost(formData,
                      //  API_URL + "upload"
-                     CERT_URL)
+                     CERT_URL,
+                     file.name)
                      .then((value) => {
 
                         this.setState({...this.state,
