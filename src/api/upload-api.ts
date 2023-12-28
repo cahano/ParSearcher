@@ -16,7 +16,7 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
                 operation: "get_s3_signed_url",
                 payload: {
                     "bucket_stage": "dev",
-                    "filename": files.get.name,
+                    "filename": files.values.name,
                     "owner_tag": "admin"
                 }
             }
@@ -24,7 +24,7 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
 
     console.log(cert_call.data)
 
-    let signed_url: string = cert_call.data.body
+    let signed_url: string = cert_call.data
 
     // Async post PDF data to api
     await axios.post(signed_url,
