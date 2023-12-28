@@ -9,9 +9,9 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
     // Getting AWS S3 signed credential
     let cert_call = await axios.get(url,
             {
-                // headers: {
-                //     "Content-Type": "application/pdf",
-                // },
+                headers: {
+                    "Content-Type": "application/json",
+                },
 
                 data: {
                     operation: "get_s3_signed_url",
