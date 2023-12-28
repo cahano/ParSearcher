@@ -14,7 +14,6 @@
     color: rgb(137, 137, 255);
     font-size: 1.6vh;
 
-
 }
 
 .welcome_text {
@@ -53,12 +52,31 @@
 /* OVERIDING AWS AUTH COMPONENT STYLES */
 
 
+/* For double-factor auth scan code */
+img {
+    margin: auto;
+}
+
+/* For the copy logo next to the login double-auth code */
+/* svg {
+    display: none;
+} */
+
 .login_frame h3 {
 
+    color: rgb(137, 137, 255);
+    margin: auto;
+
+}
+
+.amplify-flex {
+
+    margin: auto;
     color: rgb(137, 137, 255);
 
 }
 
+/* Auth component login tabs */
 .amplify-tabs__list {
 
     border: #2c2b2b !important;
