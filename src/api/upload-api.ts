@@ -6,6 +6,10 @@ import axios from 'axios';
 
 export async function axiosPDFPost(files: FormData, url: string): Promise<void> {
 
+
+    console.log(files)
+    console.log(files.values)
+
     // Getting AWS S3 signed credential
     let cert_call = await axios.post(url,
             {
