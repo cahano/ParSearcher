@@ -9,9 +9,23 @@ import LoginPage from './login/loginPage';
 import InquirePage from './inquire/InquirePage';
 import reportWebVitals from './reportWebVitals';
 
+import { Amplify } from 'aws-amplify';
+import awsExports from './login/auth/aws-exports';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
+// Configure Amplify in index file or root file
+Amplify.configure({
+  Auth: { 
+    Cognito: {
+    userPoolId: awsExports.USER_POOL_ID,
+    userPoolClientId: awsExports.USER_POOL_APP_CLIENT_ID
+    }
+  }
+})
 
 
 export default function Parsearch() {
