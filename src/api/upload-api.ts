@@ -24,7 +24,7 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
 
     console.log(cert_call.data)
 
-    let signed_url: string = cert_call.data.body
+    let signed_url: string = cert_call.data
 
     // Async post PDF data to api
     await axios.post(signed_url,
