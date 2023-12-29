@@ -43,7 +43,6 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
         method: "post",
         data: formData,
         headers: {
-            "Accept": "application/pdf",
             "Content-Type": "application/pdf"
         }
     }).then((result) => {
