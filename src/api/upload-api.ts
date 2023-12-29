@@ -4,9 +4,9 @@
 
 import axios from 'axios';
 
-export async function axiosPDFPost(files: FormData, filename: string, url: string): Promise<void> {
+export async function axiosPDFPost(formData: FormData, filename: string, url: string): Promise<void> {
 
-    console.log(files)
+    console.log(formData)
     console.log(filename)
     console.log("Getting presinged URL from S3...")
     // Getting AWS S3 signed credential
@@ -32,10 +32,15 @@ export async function axiosPDFPost(files: FormData, filename: string, url: strin
 
     console.log("Uploading file to S3...")
 
+    // Append each field to formData
+    Object.entries(fields).forEach(
+        ([key, value]) => formData.append(key, <string>value)
+      );
+
+
     // Async post PDF data to AWS S3
     await axios.post(signed_url,
-                    {fields: fields, files: files}
-                    )
+        formData)
 
     return Promise.resolve()
 
