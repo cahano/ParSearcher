@@ -28,7 +28,7 @@ export async function axiosPDFPost(files: FormData, filename: string, url: strin
     console.log("S3 Response", cert_call.data)
 
     let signed_url: string = cert_call.data["url"]
-    let fields = JSON.parse(cert_call.data["fields"])
+    let fields = cert_call.data["fields"]
 
     console.log("Uploading file to S3...")
 
