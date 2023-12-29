@@ -4,7 +4,10 @@
 
 import axios from 'axios';
 
-export async function axiosPDFPost(files: FormData, url: string): Promise<void> {
+export async function axiosPDFPost(files: FormData, filename: string, url: string): Promise<void> {
+
+    console.log(files)
+    console.log(filename)
 
     // Getting AWS S3 signed credential
     let cert_call = await axios.post(url,
@@ -16,7 +19,7 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
                 operation: "get_s3_signed_url",
                 payload: {
                     "bucket_stage": "dev",
-                    "filename": files.get.name,
+                    "filename": filename,
                     "owner_tag": "admin"
                 }
             }
@@ -26,12 +29,13 @@ export async function axiosPDFPost(files: FormData, url: string): Promise<void> 
 
     let signed_url: string = cert_call.data
 
-    // Async post PDF data to api
+    // Async post PDF data to AWS S3
     await axios.post(signed_url,
                      files,
                      {
                         headers: {
                         "Content-Type": "application/pdf",
+                        'x-amz-acl': 'authenticated-read'
                         },
                      }
                     )
