@@ -44,7 +44,7 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
             console.log("S3 upload response: ", result.data);
         })
         .catch((error) => {
-            console.log("Error: ",error);
+            console.log("Error: ", error.response);
         })
 
     return Promise.resolve()
