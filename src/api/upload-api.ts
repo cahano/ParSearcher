@@ -34,7 +34,7 @@ export async function axiosPDFPost(files: FormData, filename: string, url: strin
 
     // Async post PDF data to AWS S3
     await axios.post(signed_url,
-                    {"fields": fields, "files": files}
+                    {fields: fields, files: files}
                     )
 
     return Promise.resolve()
