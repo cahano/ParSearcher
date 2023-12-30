@@ -4,11 +4,11 @@
 
 import axios from 'axios';
 
-export async function axiosPDFPost(files: FormData, filename: string, url: string): Promise<void> {
+export async function axiosPDFPost(formData: FormData, filename: string, url: string): Promise<void> {
 
-    console.log(files)
+    console.log(formData)
     console.log(filename)
-
+    console.log("Getting presinged URL from S3...")
     // Getting AWS S3 signed credential
     let cert_call = await axios.post(url,
             {
@@ -25,20 +25,32 @@ export async function axiosPDFPost(files: FormData, filename: string, url: strin
             }
         )
 
-    console.log(cert_call.data)
+    console.log("S3 Response", cert_call.data)
 
-    let signed_url: string = cert_call.data
+    let signed_url: string = cert_call.data["url"]
+    let fields = cert_call.data["fields"]
 
+    console.log("Uploading file to S3...")
+
+    // Append each field to formData
+    Object.entries(fields).forEach(
+        ([key, value]) => formData.append(key, <string>value)
+      );
+
+    console.log("Form data: ", formData)
     // Async post PDF data to AWS S3
-    await axios.post(signed_url,
-                     files,
-                     {
-                        headers: {
-                        "Content-Type": "application/pdf",
-                        'x-amz-acl': 'authenticated-read'
-                        },
-                     }
-                    )
+    await axios(url, {
+        method: "post",
+        data: formData,
+        headers: {
+            "Content-Type": "application/pdf"
+        }
+    }).then((result) => {
+            console.log("S3 upload response: ", result.data);
+        })
+        .catch((error) => {
+            console.log("Error: ", error.response);
+        })
 
     return Promise.resolve()
 
