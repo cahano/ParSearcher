@@ -1,23 +1,19 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import DocParser from './parser/DocParser';
-import TeamPage from './team/TeamPage';
-import HomePage from './home/HomePage';
-import LoginPage from './login/loginPage';
-import InquirePage from './inquire/InquirePage';
 import reportWebVitals from './reportWebVitals';
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './login/auth/aws-exports';
+import { PrimaryLayout } from './components/primaryLayout'
+import { AppRouter } from './routes/AppRouter'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 
-// Configure Amplify in index file or root file
+// Configuring Amplify <-> Cognito cnxn
 Amplify.configure({
   Auth: { 
     Cognito: {
@@ -30,23 +26,12 @@ Amplify.configure({
 
 export default function Parsearch() {
   return (
-    <HashRouter basename='/'>
-      <Routes>
-
-          {/* Landing Page, w/ link to login, team, and inquire */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="/inquire" element={<InquirePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/parser" element={<DocParser />} />
-
-      </Routes>
-    </HashRouter>
+    <PrimaryLayout>
+      <AppRouter />
+    </PrimaryLayout>
   );
 }
 
-
-// PRESUMABLY CONNECT TO ADDITIONAL PAGES HERE
 
 root.render(
   <React.StrictMode>

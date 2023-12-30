@@ -12,28 +12,28 @@ import '@aws-amplify/ui-react/styles.css';
 
 
 const LoginPage: React.FC = () => {
-    const [user, setUser] = React.useState('');
-    const [pwrd, setPwrd] = React.useState('');
+    // const [user, setUser] = React.useState('');
+    // const [pwrd, setPwrd] = React.useState('');
   
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      console.log('username:', user);
-      console.log('password:', pwrd);
+    // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    //   event.preventDefault();
+    //   console.log('username:', user);
+    //   console.log('password:', pwrd);
 
-      // ANY AUTH LOGIC GETS INITIATIED HERE USING THE ABOVE STATE VALS
+    //   // ANY AUTH LOGIC GETS INITIATIED HERE USING THE ABOVE STATE VALS
 
-      // On form submit, client is brought to parser
-      if (typeof window !== 'undefined') {
-        window.location.href = "./#/parser";
-        }
-    };
+    //   // On form submit, client is brought to parser
+    //   if (typeof window !== 'undefined') {
+    //     window.location.href = "./#/parser";
+    //     }
+    // };
 
     return (
 
         <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="./#">Home</a>
+          <a href="./">Home</a>
         </div>
 
         <div className="login_frame">
@@ -43,6 +43,7 @@ const LoginPage: React.FC = () => {
             <Authenticator>
                 {({ signOut, user }) => (
                     <div>
+                        {/* NEED TO FORWARD TO PARSER ONCE LOGGED IN - MAY JUST NEED TO CALL THAT WIDGET HERE? */}
                         <p>Welcome Idiot</p>
                         <button onClick={signOut}>Sign out</button>
                     </div>
