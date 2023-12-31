@@ -9,8 +9,9 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
     console.log(formData)
     console.log(filename)
     console.log("Getting presinged URL from S3...")
+    let operation = "get_s3_signed_url"
     // Getting AWS S3 signed credential
-    let cert_call = await axios.post(url,
+    let certCall = await axios.post(url,
             {
                 // headers: {
                 //     "Content-Type": "application/json",
@@ -25,16 +26,14 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
             }
         )
 
-    console.log("S3 Response", cert_call.data)
+    console.log("S3 Response", certCall.data)
     
-    let signed_url: string = ""
+    let signedURL: string = ""
 
     // check if the response is a dictionary
-    if(typeof cert_call.data == "object"){
-        signed_url = cert_call.data["url"]
-        let fields = cert_call.data["fields"]
-
-        console.log("Uploading file to S3...")
+    if(typeof certCall.data == "object"){
+        signedURL = certCall.data["url"]
+        let fields = certCall.data["fields"]
 
         // Append each field to formData
         Object.entries(fields).forEach(
@@ -42,18 +41,22 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
         );
     }
     else {
-        signed_url = <string>cert_call.data 
+        signedURL = <string>certCall.data 
     }
 
 
     console.log("Form data: ", formData)
+    console.log("Uploading file to S3...")
+
+    let axiosMethod = operation == "get_s3_signed_url" ? "put" : "post"
+
     // Async post PDF data to AWS S3
-    await axios(signed_url, {
-        method: "post",
+    await axios(signedURL, {
+        method: "put",
         data: formData,
-        headers: {
-            "Content-Type": "application/pdf"
-        }
+        // headers: {
+        //     "Content-Type": "application/pdf"
+        // }
     }).then((result) => {
             console.log("S3 upload response: ", result.data);
         })
