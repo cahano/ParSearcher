@@ -2,21 +2,32 @@
 // Parsearch parser - pdf upload to parser and XLSX download
 //
 
-import React from 'react'
+import {useState} from 'react'
 import { FileProcessor } from './file-processing'
 import { Pagefooter } from '../constants'
 import './static/DocParser.css';
 
+// Importing AWS auth 
+import { getAuthedUser } from '../login/auth/userInfo'
 
-class DocParser extends React.Component {
-  render() {
-      return (
 
-      <div className="whole_main_page">
+function DocParser() {
+
+    const [currUser, setUser] = useState()
+
+    let x = getAuthedUser()
+
+    console.log(x)
+
+    return (
+
+      {x} ? (
+
+        <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a className="active" href="./#/parser">Parser</a>
-          <a className="logout" href="./#">Logout</a>
+          <a className="active" href="./parser">Parser</a>
+          <a className="logout" href="./">Logout</a>
           {/* REMOVING THESE UNTIL NEXT PHASE */}
           {/* <a href="./#/team">Deal Repos</a>
           <a href="./#/team">Analytics</a> */}
@@ -45,8 +56,12 @@ class DocParser extends React.Component {
         <Pagefooter />
 
       </div>
-    );
-  }
+
+      ) : (<div>
+            No
+           </div>)
+  );
+
 }
 
 

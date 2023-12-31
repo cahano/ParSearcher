@@ -14,7 +14,7 @@ class TeamPage extends React.Component {
       <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="./#">Home</a>
+          <a href="./">Home</a>
         </div>
 
         <div className="about_frame">
@@ -33,7 +33,7 @@ class TeamPage extends React.Component {
               and introduce to them technologies of the future.
             </p>
 
-            <p>Sound relevant to your firm? <a href="./#/inquire">Inquire</a></p>
+            <p>Sound relevant to your firm? <a href="./inquire">Inquire</a></p>
 
             <br />
 

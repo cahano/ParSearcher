@@ -12,21 +12,21 @@ class HomePage extends React.Component {
   public loginLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
-      window.location.href = "./#/login";
+      window.location.href = "./login";
       }
   }
 
   public teamLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
-      window.location.href = "./#/team";
+      window.location.href = "./team";
       }
   }
 
   public inquireLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
-      window.location.href = "./#/inquire";
+      window.location.href = "./inquire";
       }
   }
 
