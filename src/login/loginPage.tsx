@@ -9,6 +9,9 @@ import { Pagefooter } from '../constants'
 // Importing AWS auth widget
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+import userEvent from '@testing-library/user-event';
+
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
 
 const LoginPage: React.FC = () => {
@@ -27,6 +30,8 @@ const LoginPage: React.FC = () => {
     //     window.location.href = "./#/parser";
     //     }
     // };
+
+    const { user, signOut } = useAuthenticator(context => [context.user]);
 
     return (
 
@@ -47,6 +52,7 @@ const LoginPage: React.FC = () => {
                         <p>Welcome Idiot</p>
                         <button onClick={signOut}>Sign out</button>
                     </div>
+
                 )}
             </Authenticator>
 

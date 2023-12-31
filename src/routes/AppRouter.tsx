@@ -16,39 +16,46 @@ import InquirePage from '../inquire/InquirePage';
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes' 
 
+import { AuthProvider } from "../context/AuthContext";
+
 // Func for checking if user is authenticated (i.e. logged in)
 import { getAuthedUser } from '../login/auth/userInfo';
 
 
 export const AppRouter = () => {
 
-    // For storing state of user authentication
-    const [user, setUser] = useState('')
+    // // For storing state of user authentication
+    // const [user, setUser] = useState('')
 
-    // Checking if user is signed is authenticated
-    useEffect(() => {
-        getAuthedUser().then((r) => {
-            // If userid isn't 'none; (i.e. not logged in)
-            if (r.userId !== 'none') {
-                console.log('SETTING USERNAME IN STATE')
-                setUser(r.username)
-            } else {
-                console.log('NO USER FOUND')
-                setUser('')
-            }
-        })
-    }, [])
+    // // Checking if user is authenticated
+    // useEffect(() => {
+    //     getAuthedUser().then((r) => {
+    //         console.log(r.username)
+    //         // If userid isn't 'none; (i.e. not logged in)
+    //         if (r.userId === '') {
+    //             console.log('SETTING USERNAME IN STATE')
+    //             setUser(r.username)
+    //         } else {
+    //             console.log('USER logged in')
+    //             setUser('')
+    //         }
+    //     })
+    // }, [])
+
+    // console.log('USER')
+    // console.log(user)
 
     return (
         <BrowserRouter>
             <Routes>
-                {
+                {/* {
                     // If user is authenticated -> allow them to view private routes
-                    user !== 'none' && user !== ''
+                    user !== ''
                     ? <Route path="/*" element={<PrivateRoutes />} />
                     // Public routes (ONLY VIEWABLE WHEN *NOT* LOGGED IN)
                     : <Route path="/*" element={<PublicRoutes />} />
-                }
+                } */}
+                <Route path="/*" element={<PrivateRoutes />}/>
                 {/* Pages viewable to anyone */}
                 <Route path="/" element={<HomePage />} />
                 <Route path="/team" element={<TeamPage />} />
