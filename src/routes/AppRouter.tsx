@@ -30,7 +30,7 @@ export const AppRouter = () => {
         getAuthedUser().then((r) => {
             // If userid isn't 'none; (i.e. not logged in)
             if (r.userId !== 'none') {
-                console.log('SETTING USERNAME IN STATE')
+                console.log('SETTING USERNAME IN STATE', r.username)
                 setUser(r.username)
             } else {
                 console.log('NO USER FOUND')
