@@ -45,7 +45,6 @@ export const AppRouter = () => {
         <BrowserRouter>
             <Routes>
                 {
-                    
                     // If user is authenticated -> allow them to view private routes
                     user !== 'none' && user !== ''
                     ? <Route path="/*" element={<PrivateRoutes />} />
