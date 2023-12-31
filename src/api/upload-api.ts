@@ -16,7 +16,7 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
                 //     "Content-Type": "application/json",
                 // },
 
-                operation: "get_s3_signed_url",
+                operation: "get_s3_signed_post",
                 payload: {
                     "bucket_stage": "dev",
                     "filename": filename,
@@ -26,20 +26,29 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
         )
 
     console.log("S3 Response", cert_call.data)
+    
+    let signed_url: string = ""
 
-    let signed_url: string = cert_call.data["url"]
-    let fields = cert_call.data["fields"]
+    // check if the response is a dictionary
+    if(typeof cert_call.data == "object"){
+        signed_url = cert_call.data["url"]
+        let fields = cert_call.data["fields"]
 
-    console.log("Uploading file to S3...")
+        console.log("Uploading file to S3...")
 
-    // Append each field to formData
-    Object.entries(fields).forEach(
-        ([key, value]) => formData.append(key, <string>value)
-      );
+        // Append each field to formData
+        Object.entries(fields).forEach(
+            ([key, value]) => formData.append(key, <string>value)
+        );
+    }
+    else {
+        signed_url = <string>cert_call.data 
+    }
+
 
     console.log("Form data: ", formData)
     // Async post PDF data to AWS S3
-    await axios(url, {
+    await axios(signed_url, {
         method: "post",
         data: formData,
         headers: {
