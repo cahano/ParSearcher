@@ -51,12 +51,11 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
     let axiosMethod = operation == "get_s3_signed_url" ? "put" : "post"
 
     // Async post PDF data to AWS S3
-    await axios(signedURL, {
-        method: "put",
+    await axios.post(signedURL, {
         data: formData,
-        // headers: {
-        //     "Content-Type": "application/pdf"
-        // }
+        headers: {
+            "Content-Type": "application/pdf"
+        }
     }).then((result) => {
             console.log("S3 upload response: ", result.data);
         })
