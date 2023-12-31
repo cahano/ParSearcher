@@ -16,7 +16,7 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
                 //     "Content-Type": "application/json",
                 // },
 
-                operation: "get_s3_signed_post",
+                operation: "get_s3_signed_url",
                 payload: {
                     "bucket_stage": "dev",
                     "filename": filename,
