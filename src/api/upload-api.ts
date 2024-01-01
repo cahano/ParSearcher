@@ -6,17 +6,17 @@ import axios from 'axios';
 
 export async function axiosPDFPost(formData: FormData, filename: string, url: string): Promise<void> {
 
-    console.log(formData)
     console.log(filename)
     console.log("Getting presinged URL from S3...")
+    let operation = "get_s3_signed_url"
     // Getting AWS S3 signed credential
-    let cert_call = await axios.post(url,
+    let certCall = await axios.post(url,
             {
                 // headers: {
                 //     "Content-Type": "application/json",
                 // },
 
-                operation: "get_s3_signed_post",
+                operation: "get_s3_signed_url",
                 payload: {
                     "bucket_stage": "dev",
                     "filename": filename,
@@ -25,36 +25,18 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
             }
         )
 
-    console.log("S3 Response", cert_call.data)
+    console.log("S3 Response", certCall.data)
     
-    let signed_url: string = ""
-
-    // check if the response is a dictionary
-    if(typeof cert_call.data == "object"){
-        signed_url = cert_call.data["url"]
-        let fields = cert_call.data["fields"]
-
-        console.log("Uploading file to S3...")
-
-        // Append each field to formData
-        Object.entries(fields).forEach(
-            ([key, value]) => formData.append(key, <string>value)
-        );
-    }
-    else {
-        signed_url = <string>cert_call.data 
-    }
+    let signedURL: string = <string>certCall.data 
 
 
     console.log("Form data: ", formData)
+    console.log("Uploading file to S3...")
+
+    let axiosMethod = operation == "get_s3_signed_url" ? "put" : "post"
+
     // Async post PDF data to AWS S3
-    await axios(signed_url, {
-        method: "post",
-        data: formData,
-        headers: {
-            "Content-Type": "application/pdf"
-        }
-    }).then((result) => {
+    await axios.put(signedURL, formData).then((result) => {
             console.log("S3 upload response: ", result.data);
         })
         .catch((error) => {
