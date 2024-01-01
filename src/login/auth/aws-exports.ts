@@ -8,3 +8,10 @@ export default {
     "USER_POOL_APP_CLIENT_ID": "17cn6it0fjrivsbohigruo156r"
 }
 
+// NOT USED NOW BUT SHOULD BE WITH MORE COMPLEX AUTH SYSTEM...
+export interface cognitoUser {
+    username: string,
+    userId: string,
+    signInDetails?: object | undefined
+  }
+

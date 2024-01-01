@@ -2,26 +2,16 @@
 // Parsearch parser - pdf upload to parser and XLSX download
 //
 
-import {useState} from 'react'
 import { FileProcessor } from './file-processing'
 import { Pagefooter } from '../constants'
 import './static/DocParser.css';
 
-// Importing AWS auth 
-import { getAuthedUser } from '../login/auth/userInfo'
 
-
-function DocParser() {
-
-    const [currUser, setUser] = useState()
-
-    let x = getAuthedUser()
-
-    console.log(x)
+const ParserPage: React.FC = () => {
 
     return (
 
-      {x} ? (
+      // currUser !== '' ? (
 
         <div className="whole_main_page">
 
@@ -57,12 +47,9 @@ function DocParser() {
 
       </div>
 
-      ) : (<div>
-            No
-           </div>)
   );
 
 }
 
 
-export default DocParser;
+export default ParserPage;

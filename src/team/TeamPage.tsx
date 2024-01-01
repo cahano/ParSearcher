@@ -7,9 +7,9 @@ import { Pagefooter } from '../constants'
 import './static/TeamPage.css';
 
 
-class TeamPage extends React.Component {
-  render() {
-      return (
+const TeamPage: React.FC = () => {
+      
+  return (
 
       <div className="whole_main_page">
 
@@ -63,7 +63,6 @@ class TeamPage extends React.Component {
 
       </div>
     );
-  }
 }
 
 export default TeamPage;

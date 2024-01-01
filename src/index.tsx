@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './login/auth/aws-exports';
-import { PrimaryLayout } from './components/primaryLayout'
+import { Authenticator, View } from '@aws-amplify/ui-react';
 import { AppRouter } from './routes/AppRouter'
 
 const root = ReactDOM.createRoot(
@@ -25,10 +25,11 @@ Amplify.configure({
 
 
 export default function Parsearch() {
+  // Wrapping app with AWS authenticator
   return (
-    <PrimaryLayout>
+    <Authenticator.Provider>
       <AppRouter />
-    </PrimaryLayout>
+    </Authenticator.Provider>
   );
 }
 

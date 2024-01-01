@@ -7,64 +7,62 @@ import './static/HomePage.css';
 import { Pagefooter } from '../constants'
 
 
-class HomePage extends React.Component {
+const HomePage: React.FC = () => {
 
-  public loginLink() {
+  function loginLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
       window.location.href = "./login";
       }
   }
 
-  public teamLink() {
+  function teamLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
       window.location.href = "./team";
       }
   }
 
-  public inquireLink() {
+  function inquireLink() {
     // On button click, client is brought to login
     if (typeof window !== 'undefined') {
       window.location.href = "./inquire";
       }
   }
 
-  render() {
-      return (
+  return (
 
-      <div className="whole_main_page">
+    <div className="whole_main_page">
 
-        <div className='main_navbar'>
+      <div className='main_navbar'>
+      </div>
+
+      <div className="home_frame">
+
+        <div className="home_text">
+
+          <h1>Caliburn <span className="ver">0.1.0</span></h1>
+
+          <p>Prepare your data for the future.</p>
+
         </div>
 
-        <div className="home_frame">
+          <div className="home_links">
 
-          <div className="home_text">
+              <button className="team_link" onClick={teamLink}>Project</button>
 
-            <h1>Caliburn <span className="ver">0.1.0</span></h1>
+              <button className="login_link" onClick={loginLink}>Client Login</button>
 
-            <p>Prepare your data for the future.</p>
+              <button className="inquire_link" onClick={inquireLink}>Inquire</button>
 
           </div>
 
-            <div className="home_links">
-
-                <button className="team_link" onClick={this.teamLink}>Project</button>
-
-                <button className="login_link" onClick={this.loginLink}>Client Login</button>
-
-                <button className="inquire_link" onClick={this.inquireLink}>Inquire</button>
-
-            </div>
-
-        </div>
-        
-        <Pagefooter />
-
       </div>
-    );
-  }
+      
+      <Pagefooter />
+
+    </div>
+  );
 }
 
 export default HomePage;
