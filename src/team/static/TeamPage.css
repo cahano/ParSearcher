@@ -13,6 +13,8 @@ body {
 
   margin: auto;
   margin-top: 0vh;
+  /* NOT A GOOD SOLUTION TO SETTING THE FOOTER */
+  /* margin-bottom: 44.7vh; */
   width: 50vw;
   color: aliceblue;
   background-color: #161616;

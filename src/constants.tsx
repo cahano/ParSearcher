@@ -13,7 +13,7 @@ export const Pagefooter = () => {
     return (
         <div>
             <footer className='footer'>
-                <span>&copy; 2023 Caliburn</span>
+                <span>&copy; 2024 Caliburn Limited</span>
             </footer>
         </div>
         )

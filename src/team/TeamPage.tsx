@@ -13,15 +13,18 @@ const TeamPage: React.FC = () => {
 
       <div className="whole_main_page">
 
-        <div className='main_navbar'>
-          <a href="./">Home</a>
-        </div>
+      <div className='main_navbar'>
+        <a href="./">Caliburn</a>
+        <a className="right_al_link" href="./login">login</a>
+        <a className="right_al_link" href="./inquire">Inquire</a>
+        <a className="right_al_link_active" href="./team">Team</a>
+      </div>
 
         <div className="about_frame">
 
           <div className="about_text">
 
-            <h1>Our Purpose, Simply</h1>
+            {/* <h1>Our Purpose, Simply</h1>
             <p><i>Bring the future to enterprise data.</i></p>
 
             <p>Many, multi-trillion dollar industries are stricken with foundational data stored innaccesibly to
@@ -35,7 +38,7 @@ const TeamPage: React.FC = () => {
 
             <p>Sound relevant to your firm? <a href="./inquire">Inquire</a></p>
 
-            <br />
+            <br /> */}
 
             <h1>Team</h1>
 

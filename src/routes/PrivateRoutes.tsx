@@ -19,7 +19,7 @@ export const PrivateRoutes = () => {
                 <Route path='/parser' element={<ParserPage />} />
             </Routes>
             // Otherwise, send to login page
-            ) : (
+        ) : (
             <Routes>
                 {/* If unauthenticated and attempting to use /parser, send to /login */}
                 <Route path='/parser' element={<Navigate to='/login' replace />} />

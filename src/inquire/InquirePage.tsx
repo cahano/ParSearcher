@@ -10,9 +10,12 @@ const InquirePage: React.FC = () => {
 
     <div className="whole_main_page">
 
-    <div className='main_navbar'>
-      <a href="./">Home</a>
-    </div>
+      <div className='main_navbar'>
+        <a href="./">Caliburn</a>
+        <a className="right_al_link" href="./login">login</a>
+        <a className="right_al_link_active" href="./inquire">Inquire</a>
+        <a className="right_al_link" href="./team">Team</a>
+      </div>
 
     <div className="inquire_frame">
 

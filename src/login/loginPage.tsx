@@ -44,7 +44,10 @@ const LoginPage: React.FC = () => {
         <div className="whole_main_page">
 
         <div className='main_navbar'>
-          <a href="./">Home</a>
+            <a href="./">Caliburn</a>
+            <a className="right_al_link_active" href="./login">login</a>
+            <a className="right_al_link" href="./inquire">Inquire</a>
+            <a className="right_al_link" href="./team">Team</a>
         </div>
 
         <div className="login_frame">
