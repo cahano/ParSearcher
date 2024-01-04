@@ -5,8 +5,13 @@
 }
 
 ul li {
-  font-size: 2.1vh;
+  font-size: 2.4vh;
   color: rgb(137, 137, 255);
+}
+
+/* For dates */
+.s_date {
+  font-size: 1.5vh;
 }
 
 .about_frame {
@@ -46,21 +51,23 @@ ul li {
 .mmb_header {
   display: block;
   margin-bottom: 2vh;
-  height: 27vh;
+  height: 33vh;
 }
 .mmb_header .mmb_pic {
   float: left;
-  border: 1px solid rgb(137, 137, 255);
+  border: 1px solid #161616;
+  border-radius: 0.5vw;
 
-  height: 25vh;
-  width: 28vw;
+  height: 33vh;
+  width: 26vw;
 }
 .mmb_header .mmb_sum {
   float: right;
   /* border: 1px solid rgb(137, 137, 255); */
+  font-size: 3vh;
 
-  height: 25vh;
-  width: 47vw;
+  height: 33vh;
+  width: 49vw;
 }
 .mmb_body {
   font-size: 2vh;

@@ -5,6 +5,7 @@
 import React from 'react'
 import { Pagefooter } from '../constants'
 import './static/TeamPage.css';
+// import occ_hs from '../../public'
 
 
 const TeamPage: React.FC = () => {
@@ -39,20 +40,20 @@ const TeamPage: React.FC = () => {
           <div className='mmb_header'>
 
             <div className='mmb_pic'>
-              PIC OF OWEN
+              <img src="../occ_hs.jpg" alt='occ_hs' className='mmb_pic'/>
             </div>
             <div className='mmb_sum'>
 
               <ul>
-                <li><b>Rensselaer Polytechnic Institute</b> (2021)</li>
+                <li><b>Rensselaer Polytechnic Institute</b> <span className='s_date'>(2021)</span></li>
                 <ul>
                   <li>Mathematics</li>
-                  <li>Business, Finance</li>
+                  <li>Business & Finance</li>
                 </ul>
 
                 <br />
 
-                <li><b>J.P. Morgan</b> (2021 - 2024)</li>
+                <li><b>J.P. Morgan</b> <span className='s_date'>(2021 - 2024)</span></li>
                 <ul>
                   <li>Investment Banking - CIB CRE Special Situations</li>
                   <li>Quantitative Research - CIB Structured Products Group</li>
@@ -64,18 +65,21 @@ const TeamPage: React.FC = () => {
           </div>
 
           <div className='mmb_body'>
-            <h3>Following an undergraduate experience concentrated heavily in mathematics,
-              Owen headed to the Commercial Real Estate (CRE) group at J.P. Morgan where he contributed to advisory on
-              highly structured speculative, ground-up development loans as well as special situations restructuring 
-              and oppurtunistic credit oppurtunities. Having noticed the widespread oppurtunity for tech-based efficiency
-              gain at an industry-leading institution, Owen moved to J.P. Morgan's Quantitative Research division to develop
-              full-stack applications for the banking and trading arms of CRE. Looking for a way to more quickly solve the
-              same industry-wide problems and better deliver them to businesses, Owen left JPM to start Caliburn
-              with a trusted team of developers. 
+            <h3>
+              Following an undergraduate experience concentrated heavily in mathematics,
+              Owen headed to the Commercial Real Estate (CRE) Special Situations group at
+              J.P. Morgan where he contributed to advisory on highly structured large-size
+              development loans as well as special situations restructuring and turnarounds.
+              Captivated by the widespread oppurtunity for tech-based efficiency gain at an
+              industry-leading institution, Owen moved to JPM's Quantitative Research
+              division to develop full-stack applications for the banking and trading arms of CRE.
+              Looking for a way to more quickly solve larger industry-wide problems, Owen left JPM
+              to start Caliburn with a trusted team of developers. 
             </h3>
             <h3>
-              When not working on Caliburn, Owen spends time consuming news from all over the world,
-              existing in NYC, playing squash, fly fishing, and finding other things to keep busy outdoors.
+              When not with Caliburn, Owen spends time consuming news from all over the world,
+              tinkering with code, playing squash, fly fishing, and finding other things to do
+              outdoors throughout the year.
             </h3>
           </div>
         </div>
@@ -97,18 +101,18 @@ const TeamPage: React.FC = () => {
             <div className='mmb_sum'>
 
               <ul>
-                <li><b>Rensselaer Polytechnic Institute</b> (2021)</li>
+                <li><b>Rensselaer Polytechnic Institute</b> <span className='s_date'>(2021)</span></li>
                 <ul>
                   <li>Computer Science</li>
                 </ul>
 
                 <br />
 
-                <li><b>P.N.C.</b> (2022 - 2024)</li>
+                <li><b>P.N.C.</b> <span className='s_date'>(2022 - 2024)</span></li>
                 <ul>
                   <li>Managing Software Engineering</li>
                 </ul>
-                <li><b>Grammarly</b> (2021 - 2022)</li>
+                <li><b>Grammarly</b> <span className='s_date'>(2021 - 2022)</span></li>
                 <ul>
                   <li>Machine Learning</li>
                 </ul>
@@ -145,18 +149,18 @@ const TeamPage: React.FC = () => {
             <div className='mmb_sum'>
 
               <ul>
-                <li><b>Rensselaer Polytechnic Institute</b> (2020)</li>
+                <li><b>Rensselaer Polytechnic Institute</b> <span className='s_date'>(2020)</span></li>
                 <ul>
                   <li>Electrical Engineering</li>
                 </ul>
 
                 <br />
 
-                <li><b>Amazon</b> (2022 - 2024)</li>
+                <li><b>Amazon</b> <span className='s_date'>(2022 - 2024)</span></li>
                 <ul>
                   <li>Cybersecurity - Software Engineering</li>
                 </ul>
-                <li><b>Bank of America</b> (2020 - 2022)</li>
+                <li><b>Bank of America</b> <span className='s_date'>(2020 - 2022)</span></li>
                 <ul>
                   <li>Software Engineering Associate</li>
                 </ul>
