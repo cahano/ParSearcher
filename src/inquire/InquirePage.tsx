@@ -17,9 +17,56 @@ const InquirePage: React.FC = () => {
         <a className="right_al_link" href="./team">Team</a>
       </div>
 
-    <div className="inquire_frame">
+      <div className='inquire_frame'>
 
-      <div className="inquire_text">
+        <div className='header_txt'>
+          <h1>Ready to change how your business interacts with data?</h1>
+          <h1>Reach out.</h1>
+        </div>
+
+        {/* NEED SOME SORT OF EMAIL/INQUIRE COMPONENT HERE */}
+        <div className='contact_info'>
+          <div className='contact_static'>
+            <h1>By phone:</h1>
+            <h2>+1-911-911-9911</h2>
+          </div>
+          <div className='contact_form'>
+            <h1>By email:</h1>
+            {/* MAILS TO OCC EMAIL BUT WILL NEED TO SEND TO CALIBURN EMAIL */}
+            <form method="POST"
+                  action="mailto: owencahan1@gmail.com"
+                  encType="multipart/form-data">
+            
+              <input type="text" name="name" placeholder='Your Name'></input>
+              <br/>
+              <input type="text" name="business" placeholder='Your Business'></input>
+              <br/>
+              <input type="text" name="email" placeholder='Your Email'></input>
+              <br/>
+              <input type="text" name="comment" placeholder='Your reasoning as to why we make a good team...'></input>
+              <br/>
+              <button type="submit">Send</button>
+              <button type="reset">Clear</button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <h1 className='sect_split'>---</h1>
+
+    <Pagefooter />
+
+  </div>
+);
+}
+
+export default InquirePage;
+
+
+      {/* <div className="inquire_text">
 
         <h1>Inquire</h1>
         <p>If your data ingestion pipelines require human intervention,
@@ -39,14 +86,4 @@ const InquirePage: React.FC = () => {
             <li>Our, Business, Address</li>
         </ul>
 
-      </div>
-
-    </div>
-
-    <Pagefooter />
-
-  </div>
-);
-}
-
-export default InquirePage;
+      </div> */}

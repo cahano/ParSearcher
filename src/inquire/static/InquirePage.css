@@ -1,15 +1,69 @@
-/* .App {
-  text-align: center;
-  background-color: #282c34;
-} */
+/* Inquire page CSS */
+  
 
-/* Setting primary color */
-body {
-    background-color: #282c34;
-  }
-  
-  
-  .inquire_frame {
+.sect_split {
+  font-size: 8vh;
+}
+
+
+.inquire_frame {
+
+  margin: auto;
+  width: 80vw;
+  height: 83vh;
+  overflow-y: scroll;
+  padding: 0vw 1vw 0vw 0vw;
+
+}
+
+.header_txt {
+  margin-bottom: 15vh;
+}
+.header_txt h1 {
+  font-size: 6vh;
+}
+
+.contact_info {
+  color: rgb(137, 137, 255);
+  display: block;
+}
+.contact_info h1 {
+  font-size: 5vh;
+}
+.contact_static {
+  float: left;
+}
+.contact_form {
+  float: right;
+  width: 50vw;
+}
+.contact_form h1 {
+  width: 45vw;
+}
+.contact_form input {
+  color: rgb(137, 137, 255);
+  float: right;
+  width: 50vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  margin-bottom: 2vh;
+}
+.contact_form button {
+  width: 9vw;
+  height: 3.5vh;
+  background-color: rgb(137, 137, 255);
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0.5vh;
+  margin-top: 2vh;
+  margin-left: 11vw;
+}
+
+
+
+
+  /* .inquire_frame {
   
     margin: auto;
     margin-top: 0vh;
@@ -20,9 +74,9 @@ body {
     border-radius: 0.2vw;;
     font-size: 1.75vh;
   
-  }
+  } */
   
-  .inquire_text {
+  /* .inquire_text {
   
     text-align: left;
     margin: auto;
@@ -55,4 +109,4 @@ body {
     margin-bottom: -1.2vh;
   
   }
-  
+   */

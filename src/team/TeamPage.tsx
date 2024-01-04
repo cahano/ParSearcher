@@ -66,13 +66,13 @@ const TeamPage: React.FC = () => {
           <div className='mmb_body'>
             <h3>Following an undergraduate experience concentrated heavily in mathematics,
               Owen headed to the Commercial Real Estate (CRE) group at J.P. Morgan where he contributed to advisory on
-              highly structured speculative and ground-up development loans as well as special situations restructuring 
+              highly structured speculative, ground-up development loans as well as special situations restructuring 
               and oppurtunistic credit oppurtunities. Having noticed the widespread oppurtunity for tech-based efficiency
               gain at an industry-leading institution, Owen moved to J.P. Morgan's Quantitative Research division to develop
               full-stack applications for the banking and trading arms of CRE. Looking for a way to more quickly solve the
               same industry-wide problems and better deliver them to businesses, Owen left JPM to start Caliburn
               with a trusted team of developers. 
-              </h3>
+            </h3>
             <h3>
               When not working on Caliburn, Owen spends time consuming news from all over the world,
               existing in NYC, playing squash, fly fishing, and finding other things to keep busy outdoors.
