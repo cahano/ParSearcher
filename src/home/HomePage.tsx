@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
 
       <div className='main_navbar'>
         <a className='active' href="./">Caliburn</a>
-        <a className="right_al_link" href="./login">login</a>
+        <a className="right_al_link" href="./login">Login</a>
         <a className="right_al_link" href="./inquire">Inquire</a>
         <a className="right_al_link" href="./team">Team</a>
       </div>
@@ -81,10 +81,10 @@ const HomePage: React.FC = () => {
 
         <div className='login_sect'>
           <div className="login_txt">
-            <h1>Have an Account?</h1>
+            <h1>Already working with us?</h1>
           </div>
           <div className='login_link'>
-            <h3>Get to work:</h3>
+            <h3>Welcome back:</h3>
             <button onClick={loginLink}>Client Login</button>
           </div>
         </div>
