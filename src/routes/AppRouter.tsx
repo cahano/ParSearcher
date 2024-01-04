@@ -26,7 +26,7 @@ export const AppRouter = () => {
                     <Route path="/inquire" element={<InquirePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     {/* Redirects any other address extensions to the home page */}
-                    <Route path='*' element={<Navigate to='/' replace />} />
+                    <Route path='/*' element={<Navigate to='/' replace />} />
                 </Routes>
             </BrowserRouter>
 
