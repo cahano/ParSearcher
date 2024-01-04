@@ -34,7 +34,10 @@ const TeamPage: React.FC = () => {
         <div className='owen_sect'>
 
           <div className="mmb_title">
-            <h1>Owen Cahan <span className='j_title'>Founder & CEO</span></h1>
+            <h1>
+              Owen Cahan <span className='j_title'>Founder & CEO | <a href="https://www.linkedin.com/in/owen-cahan/">LinkedIn</a>
+                         </span>
+            </h1>
           </div>
 
           <div className='mmb_header'>
