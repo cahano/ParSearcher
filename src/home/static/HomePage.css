@@ -8,12 +8,13 @@
 }
 
 
-.home_header {
+.home_frame {
 
     margin: auto;
     width: 80vw;
     overflow-y: scroll;
     height: 83vh;
+    /* padding: 1vw; */
 
 }
 .biggest_txt {

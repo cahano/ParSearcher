@@ -41,7 +41,8 @@ const HomePage: React.FC = () => {
         <a className="right_al_link" href="./team">Team</a>
       </div>
 
-      <div className="home_header">
+      <div className="home_frame">
+        
         <div className="biggest_txt">
           <h1>The future of business technology is coming fast.</h1>
           <br />
