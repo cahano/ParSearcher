@@ -115,10 +115,6 @@ const TeamPage: React.FC = () => {
                 <ul>
                   <li>Managing Software Engineering</li>
                 </ul>
-                <li><b>Grammarly</b> <span className='s_date'>(2021 - 2022)</span></li>
-                <ul>
-                  <li>Machine Learning</li>
-                </ul>
               </ul>
 
             </div>
