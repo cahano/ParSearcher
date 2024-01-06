@@ -17,7 +17,7 @@
 }
 
 .header_txt {
-  margin-bottom: 15vh;
+  margin-bottom: 13vh;
 }
 .header_txt h1 {
   font-size: 6vh;
@@ -59,56 +59,5 @@
   border: none;
   border-radius: 0.5vh;
   margin-top: 2vh;
-  margin-left: 11vw;
+  margin-left: 7.5vw;
 }
-
-
-
-
-  /* .inquire_frame {
-  
-    margin: auto;
-    margin-top: 0vh;
-    width: 50vw;
-    color: aliceblue;
-    background-color: #161616;
-    display: flex;
-    border-radius: 0.2vw;;
-    font-size: 1.75vh;
-  
-  } */
-  
-  /* .inquire_text {
-  
-    text-align: left;
-    margin: auto;
-    margin-bottom: 3vh;
-
-    width: 45vw;
-    color: rgb(214, 218, 215);
-    background-color: #161616;
-  
-  }
-  .inquire_text ul {
-  
-    margin-top: 3vh;
-
-  }
-  .inquire_text li {
-  
-    margin-bottom: 1vh;
-
-  }
-  
-  .member {
-  
-    margin-bottom: 3vh;
-  
-  }
-  
-  .member h2 {
-  
-    margin-bottom: -1.2vh;
-  
-  }
-   */

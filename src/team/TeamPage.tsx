@@ -69,10 +69,9 @@ const TeamPage: React.FC = () => {
 
           <div className='mmb_body'>
             <h3>
-              Following an undergraduate experience concentrated heavily in mathematics,
-              Owen headed to the Commercial Real Estate (CRE) Special Situations group at
+              Owen began his career with the Commercial Real Estate (CRE) Special Situations group at
               J.P. Morgan where he contributed to advisory on highly structured large-size
-              development loans as well as special situations restructuring and turnarounds.
+              development loans as well as restructuring and turnarounds.
               Captivated by the widespread oppurtunity for tech-based efficiency gain at an
               industry-leading institution, Owen moved to JPM's Quantitative Research
               division to develop full-stack applications for the banking and trading arms of CRE.
@@ -99,7 +98,7 @@ const TeamPage: React.FC = () => {
           <div className='mmb_header'>
 
             <div className='mmb_pic'>
-              PIC OF Brandon
+            <img src="../bfh_hs.jpg" alt='bfh_hs' className='mmb_pic'/>
             </div>
             <div className='mmb_sum'>
 
@@ -123,10 +122,18 @@ const TeamPage: React.FC = () => {
 
           <div className='mmb_body'>
             <h3>
-              MORE DETAILED STUFF!!!!!
+              During Brandon’s tenure in software engineering at P.N.C., he developed
+              applications pivotal to enhancing the investment bank's lending technology. 
+              Upon moving into management, Brandon continued to contribute technically, 
+              while leading a team of engineers through a historically complex time in 
+              regional banking. Following this exciting chapter at P.N.C. and inspired by 
+              the potential opportunities he saw in the intersection between technology 
+              and finance, Brandon made the decision to leave the firm 
+              and co-found Caliburn.
             </h3>
             <h3>
-              FUN STUFF!!!!
+              Brandon's interests include home cooking, musical composition and
+              performance, and astronomy.
             </h3>
           </div>
         </div>
