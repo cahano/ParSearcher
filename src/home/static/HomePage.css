@@ -8,13 +8,17 @@
 }
 
 
+.scroll_frame {
+    
+}
+
 .home_frame {
 
     margin: auto;
-    width: 80vw;
+    width: 100vw;
     overflow-y: scroll;
     height: 83vh;
-    /* padding: 1vw; */
+    padding: 0vw 5vw 0vw 5vw;
 
 }
 .biggest_txt {

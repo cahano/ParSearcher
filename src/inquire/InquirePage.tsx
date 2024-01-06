@@ -20,7 +20,7 @@ const InquirePage: React.FC = () => {
       <div className='inquire_frame'>
 
         <div className='header_txt'>
-          <h1>Ready to change how your business interacts with data?</h1>
+          <h1>Ready to redefine your relationship with business critical data?</h1>
           <h1>Reach out.</h1>
         </div>
 

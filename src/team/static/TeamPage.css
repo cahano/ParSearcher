@@ -17,10 +17,10 @@ ul li {
 .about_frame {
 
   margin: auto;
-  width: 80vw;
+  width: 100vw;
   overflow-y: scroll;
   height: 83vh;
-  padding: 0vw 1vw 0vw 0vw;
+  padding: 0vw 5vw 0vw 5vw;
 
 }
 

@@ -9,10 +9,10 @@
 .inquire_frame {
 
   margin: auto;
-  width: 80vw;
+  width: 100vw;
   height: 83vh;
   overflow-y: scroll;
-  padding: 0vw 1vw 0vw 0vw;
+  padding: 0vw 5vw 0vw 5vw;
 
 }
 
@@ -26,6 +26,7 @@
 .contact_info {
   color: rgb(137, 137, 255);
   display: block;
+  width: 80vw;
 }
 .contact_info h1 {
   font-size: 5vh;
@@ -35,7 +36,7 @@
 }
 .contact_form {
   float: right;
-  width: 50vw;
+  width: 40vw;
 }
 .contact_form h1 {
   width: 45vw;
@@ -43,7 +44,8 @@
 .contact_form input {
   color: rgb(137, 137, 255);
   float: right;
-  width: 50vw;
+  width: 40vw;
+  padding: 0vw 0vw 0vw 0vw;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid;
