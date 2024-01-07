@@ -92,7 +92,7 @@ const TeamPage: React.FC = () => {
         <div className='bran_sect'>
 
           <div className="mmb_title">
-            <h1>Brandon Huang <span className='j_title'>Founder & CTO</span></h1>
+            <h1>Brandon Huang <span className='j_title'>Founder & CQO</span></h1>
           </div>
 
           <div className='mmb_header'>
@@ -144,7 +144,7 @@ const TeamPage: React.FC = () => {
         <div className='mo_sect'>
 
           <div className="mmb_title">
-            <h1>Mo Hayat <span className='j_title'>Founder & CIO</span></h1>
+            <h1>Mo Hayat <span className='j_title'>Founder & CTO</span></h1>
           </div>
 
           <div className='mmb_header'>

@@ -156,11 +156,11 @@ body {
   background: url("../../../public/good_net.png") right/120% no-repeat;
   -webkit-animation: bg-scrolling-reverse 90s infinite;
   /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 2s infinite;
+  -moz-animation: bg-scrolling-reverse 90s infinite;
   /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 2s infinite;
+  -o-animation: bg-scrolling-reverse 90s infinite;
   /* Opera 12+ */
-  animation: bg-scrolling-reverse 90s infinite;
+  animation: bg-scrolling 90s infinite reverse;
   /* IE 10+ */
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
