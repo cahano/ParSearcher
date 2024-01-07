@@ -32,6 +32,7 @@ const HomePage: React.FC = () => {
 
   return (
 
+    
     <div className="whole_main_page">
 
       <div className='main_navbar'>
