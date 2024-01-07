@@ -4,6 +4,7 @@
 .login_frame {
 
     margin: auto;
+    margin-top: 16vh;
     width: 20vw;
     background-color: #161616;
     border-radius: 3px;

@@ -9,6 +9,7 @@
 .inquire_frame {
 
   margin: auto;
+  margin-top: 5vh;
   width: 100vw;
   height: 83vh;
   overflow-y: scroll;

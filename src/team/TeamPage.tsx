@@ -157,7 +157,7 @@ const TeamPage: React.FC = () => {
               <ul>
                 <li><b>Rensselaer Polytechnic Institute</b> <span className='s_date'>(2020)</span></li>
                 <ul>
-                  <li>Electrical Engineering</li>
+                  <li>Computer Engineering</li>
                 </ul>
 
                 <br />

@@ -4,26 +4,28 @@
 
 
 .sect_split {
-    font-size: 8vh;
+    font-size: 8vh !important;
 }
 
 
 .home_frame {
 
+    margin-top: 0vh;
     margin: auto;
     width: 100vw;
     overflow-y: scroll;
-    height: 83vh;
-    padding: 0vw 5vw 0vw 5vw;
+    height: 92vh;
+    /* padding: 0vw 5vw 0vw 5vw; */
 
 }
 .biggest_txt {
     font-size: 5vh;
-    margin-top: -6vh;
-    margin-bottom: 0vh;
+    padding: 0vw 5vw 0vw 5vw;
 }
 .mission_sect {
+    padding: 1vw 5vw 0.5vw 5vw;
     margin-bottom: 0vh;
+    background-color: rgb(37, 37, 37);
 }
 .mission_txt {
     color: rgb(137, 137, 255);
@@ -50,6 +52,8 @@
 }
 
 .inquire_sect {
+    padding: 1vw 5vw 0.5vw 5vw;
+    background-color: rgb(37, 37, 37);
     color: rgb(137, 137, 255);
 }
 .inquire_sect h1 {
@@ -74,7 +78,8 @@
 }
 
 .login_sect {
-    margin-bottom: 5vh;
+    padding: 1vw 5vw 0.5vw 5vw;
+    background-color: rgb(37, 37, 37);
     color: rgb(137, 137, 255);
 }
 .login_txt {
@@ -94,83 +99,159 @@
     box-shadow: none !important;
     border: none;
     border-radius: 0.5vh;
+    margin-bottom: 5vh;
 }
 
 
-/* TRYING TO MAKE A BACKGROUND */
+/* TRYING TO MAKE A Dynamic/Modern BACKGROUND */
 
-/* Cool infinite background scrolling animation.
- * Twitter: @kootoopas
- */
-/* Exo thin font from Google. */
-@import url(https://fonts.googleapis.com/css?family=Exo:100);
-/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-/* Animations */
-@-webkit-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
+/* Circle object container */
+.glowing {
+    z-index: -1;
+    position: absolute;
+    min-width: 100vw;
+    height: 100vh;
+    margin: 5vw;
+    transform-origin: right;
+    animation: colorChange 3s linear infinite;
 }
-@-moz-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-webkit-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-/* Main styles */
-body {
-  /* margin-top: 13.5rem;
-  color: #999;
-  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
-  text-align: center; */
-  /* img size is 50x50 */
-  background: url("../../../public/good_net.png") right/120% no-repeat;
-  -webkit-animation: bg-scrolling-reverse 90s infinite;
-  /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 90s infinite;
-  /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 90s infinite;
-  /* Opera 12+ */
-  animation: bg-scrolling 90s infinite reverse;
-  /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-/* body::before {
-  content: "";
-  font-size: 8rem;
-  font-weight: 100;
-  font-style: normal;
-} */
 
+/* Sets color change for circle objects */
+@keyframes colorChange {
+    0% {
+        color: blue;
+        /* transform: rotate(0deg); */
+    }
+    50% {
+        color: pink;
+    }
+    100% {
+        color:rgb(137, 137, 255);
+    };
+      /* transform: rotate(360deg); */
+}
+  
+.glowing span {
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    bottom: 30vh;
+    right: 30vw;
+}
+.glowing span::before {
+        content: "";
+        position: absolute;
+        top: 70vh;
+        left: 100px;
+        width: .75vw;
+        height: 1.5vh;
+        /* background: #f00; */
+        border-radius: 50%;
+}
+
+/* Creating circle objects that trajeverse UI */
+.glowing span:nth-child(3n + 1)::before {
+    position: absolute;
+    top: 90vh;
+    left: 20vw;
+    width: .75vw;
+    height: 1.5vh;
+    /* background: #f00; */
+    border-radius: 100%;
+
+    background: rgb(137, 137, 255);
+    box-shadow: 0 0 0.05vw rgb(137, 137, 255),
+      0 0 0.3vw rgb(137, 137, 255),
+      0 0 0.6vw rgb(137, 137, 255),
+      0 0 0.9vw rgb(137, 137, 255),
+      0 0 0 0.25vw rgba(134,255,0,.1);
+}
+.glowing span:nth-child(3n + 2)::before {
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    width: .75vw;
+    height: 1.5vh;
+    /* background: #f00; */
+    border-radius: 50%;
+
+    background: rgb(137, 137, 255);
+    box-shadow: 0 0 0.05vw rgb(137, 137, 255),
+      0 0 0.3vw rgb(137, 137, 255),
+      0 0 0.6vw rgb(137, 137, 255),
+      0 0 0.9vw rgb(137, 137, 255),
+      0 0 0 0.25vw rgba(134,255,0,.1);
+}
+.glowing span:nth-child(3n + 3)::before {
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    width: .75vw;
+    height: 1.5vh;
+    /* background: #f00; */
+    border-radius: 50%;
+
+    background: rgb(137, 137, 255);
+    box-shadow: 0 0 0.05vw rgb(137, 137, 255),
+      0 0 0.3vw rgb(137, 137, 255),
+      0 0 0.6vw rgb(137, 137, 255),
+      0 0 0.9vw rgb(137, 137, 255),
+      0 0 0 0.25vw rgba(134,255,0,.1);
+}
+
+/* Setting animations */
+.glowing span:nth-child(3n + 1) {
+animation: animate 9s reverse infinite;
+}
+.glowing span:nth-child(3n + 2) {
+animation: our-linear 6s infinite;
+}
+.glowing span:nth-child(3n + 3) {
+animation: animate-reverse 12s infinite; 
+}
+
+  /* Trajectory of standard circular papth */
+@keyframes animate {
+    0% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+/* Trajectory of reverse circular path */
+@keyframes animate-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    50% {
+        transform: rotate(180deg);
+    }
+    
+    100% {
+        transform: rotate(0deg);
+    }
+}
+   
+/* Trajectory of linear path */
+@keyframes our-linear {
+    0% {
+        top: -50vh;
+        left: -50vw;
+    }
+    
+    50% {
+        top: 60vh;
+        left: 50vw;
+    }
+    
+    100% {
+        top: 50vh;
+        left: 130vw;
+    }
+}

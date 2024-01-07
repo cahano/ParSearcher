@@ -17,6 +17,7 @@ ul li {
 .about_frame {
 
   margin: auto;
+  margin-top: 4vh;
   width: 100vw;
   overflow-y: scroll;
   height: 83vh;

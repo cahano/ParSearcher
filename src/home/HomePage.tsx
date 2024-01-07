@@ -42,15 +42,29 @@ const HomePage: React.FC = () => {
         <a className="right_al_link" href="./team">Team</a>
       </div>
 
+      {/* Moving 2-d balls that compose dynamic background */}
+      <div className="glowing">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
       <div className="home_frame">
         
         <div className="biggest_txt">
           <h1>The future of business technology is coming fast.</h1>
           <br />
           <h1>We prepare your business faster.</h1>
+          <h1 className="sect_split">---</h1>
         </div>
-        
-        <h1 className="sect_split">---</h1>
+      
 
         <div className="mission_sect">
           <div className="mission_txt">
@@ -63,9 +77,10 @@ const HomePage: React.FC = () => {
             <h3>More about us:</h3>
             <button className="team_link" onClick={teamLink}>Team</button>
           </div>
+
+          <h1 className="sect_split">---</h1>
+
         </div>
-        
-        <h1 className="sect_split">---</h1>
 
         <div className='inquire_sect'>
           <div className='inquire_txt'>
@@ -77,9 +92,10 @@ const HomePage: React.FC = () => {
             <h3>Let's talk:</h3>
             <button onClick={inquireLink}>Inquire</button>
           </div>
-        </div>
 
-        <h1 className="sect_split">---</h1>
+          <h1 className="sect_split">---</h1>
+
+        </div>
 
         <div className='login_sect'>
           <div className="login_txt">
