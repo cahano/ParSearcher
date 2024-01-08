@@ -152,8 +152,8 @@
 /* Creating circle objects that trajeverse UI */
 .glowing span:nth-child(3n + 1)::before {
     position: absolute;
-    top: 90vh;
-    left: 20vw;
+    top: 30vh;
+    left: 60vw;
     width: .75vw;
     height: 1.5vh;
     /* background: #f00; */
@@ -168,8 +168,8 @@
 }
 .glowing span:nth-child(3n + 2)::before {
     position: absolute;
-    top: 30vh;
-    left: 50vw;
+    top: 43.5vh;
+    left: 52vw;
     width: .75vw;
     height: 1.5vh;
     /* background: #f00; */
@@ -184,8 +184,8 @@
 }
 .glowing span:nth-child(3n + 3)::before {
     position: absolute;
-    top: 30vh;
-    left: 50vw;
+    top: 36.5vh;
+    left: 56vw;
     width: .75vw;
     height: 1.5vh;
     /* background: #f00; */
@@ -201,57 +201,67 @@
 
 /* Setting animations */
 .glowing span:nth-child(3n + 1) {
-animation: animate 9s reverse infinite;
+animation: our-lin-1 2.6s infinite;
 }
 .glowing span:nth-child(3n + 2) {
-animation: our-linear 6s infinite;
+animation: our-lin-2 2.6s infinite;
 }
 .glowing span:nth-child(3n + 3) {
-animation: animate-reverse 12s infinite; 
+animation: our-lin-3 2.6s infinite; 
 }
 
-  /* Trajectory of standard circular papth */
-@keyframes animate {
+
+/* Trajectory of linear path */
+@keyframes our-lin-1 {
     0% {
-        transform: rotate(180deg);
+        top: 0vh;
+        left: -100vw;
     }
+    
     50% {
-        transform: rotate(0deg);
+        top: 0vh;
+        left: -49vw;
     }
+    
     100% {
-        transform: rotate(360deg);
+        top: 0vh;
+        left: 200vw;
+    }
+}
+
+
+  /* Trajectory of standard circular papth */
+  @keyframes our-lin-2 {
+    0% {
+        top: 0vh;
+        left: -100vw;
+    }
+    
+    50% {
+        top: 0vh;
+        left: -49vw;
+    }
+    
+    100% {
+        top: 0vh;
+        left: 200vw;
     }
 }
   
 /* Trajectory of reverse circular path */
-@keyframes animate-reverse {
+@keyframes our-lin-3 {
     0% {
-        transform: rotate(0deg);
+        top: 0vh;
+        left: -100vw;
     }
     
     50% {
-        transform: rotate(180deg);
+        top: 0vh;
+        left: -49vw;
     }
     
     100% {
-        transform: rotate(0deg);
-    }
-}
-   
-/* Trajectory of linear path */
-@keyframes our-linear {
-    0% {
-        top: -50vh;
-        left: -50vw;
-    }
-    
-    50% {
-        top: 60vh;
-        left: 50vw;
-    }
-    
-    100% {
-        top: 50vh;
-        left: 130vw;
+        top: 0vh;
+        left: 200vw;
     }
 }
