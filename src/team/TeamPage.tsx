@@ -150,7 +150,7 @@ const TeamPage: React.FC = () => {
           <div className='mmb_header'>
 
             <div className='mmb_pic'>
-              PIC OF Mo
+            <img src="../mofhayat.jpg" alt='bfh_hs' className='mmb_pic'/>
             </div>
             <div className='mmb_sum'>
 
