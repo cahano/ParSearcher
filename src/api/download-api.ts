@@ -6,6 +6,9 @@
 import axios from 'axios';
 
 
+const TIME_LIMIT_MIN = 30 //in minutes
+
+
 // Initiaties py-side parsing for eventual output file download
 export async function StartPyParse(url: string): Promise<void> {
 
@@ -21,19 +24,35 @@ const timeout = (time:any) =>
 
 // Ping inputted URL every inputted # of sec until status code '200' is received
 //// Then execute client file download
-export async function DownloadPoll(url: string, time: any): Promise<void> {
+export async function DownloadPoll(url: string, filename: string, time: any): Promise<void> {
 
     // Controls loop that pings API
     let polling = true;
-
+    filename = filename.replace(".pdf", ".xlsx")
+    filename = "output_" + filename
     // Awaiting completion of polling (i.e. awaiting response code of '200')
     await (async function doPolling() {
 
         while (polling) {
 
             try {
+                console.log("Getting signed URL for file ", filename)
+                let certCall = await axios.post(url,
+                    {
+                        operation: "get_s3_signed_get",
+                        payload: {
+                            "bucket_stage": "dev",
+                            "filename": filename,
+                            // TODO: need to get user from user login
+                            "owner_tag": "admin"
+                        }
+                    }
+                )
+                
+                let signedGetURL: string = <string>certCall.data 
+                console.log("Got signed URL, polling for file ", filename)
                 // Pinging inputted API url
-                const res = await axios.get(url,
+                const res = await axios.get(signedGetURL,
                                             { responseType: 'arraybuffer' })
                 // run polling delay (e.g. 5 seconds)
                 if (polling) {
@@ -55,7 +74,7 @@ export async function DownloadPoll(url: string, time: any): Promise<void> {
                     output_el.href = URL;
                     // Simulating link click
                     //// NEED TO MAKE THIS FILE NAME DYNAMIC - SAME AS INPUT NAME
-                    output_el.download = 'parsed_output.xlsx';
+                    output_el.download = filename;
                     output_el.click();
 
                     // returning promise here so state updates only AFTER download occurs

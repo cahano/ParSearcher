@@ -73,6 +73,15 @@ export class FileProcessor extends React.Component<{},
 
                  })
     })
+
+
+    Array.from(browse_files).forEach((file: any) => {
+      console.log("Downloading ",file)
+      // make a POST request to the File Upload API
+      this.handleDownload(file.name)
+
+    })
+
   };
 
 
@@ -135,7 +144,7 @@ export class FileProcessor extends React.Component<{},
 
 
   // HANDLING DOWNLOAD
-  public handleDownload() {
+  public handleDownload(filename: string) {
 
     // Displaying 'parser' message/visual
     this.setState({
@@ -143,12 +152,12 @@ export class FileProcessor extends React.Component<{},
       isParsing: true
     })
 
-    // Initiate parsing of uploaded doc(s)
-    StartPyParse(API_URL + 'parse')
+    // // Initiate parsing of uploaded doc(s)
+    // StartPyParse(API_URL + 'parse')
 
     // Ping tornado 'download' api until downloadable is present, then download
     //// And update state to remove 'parsing' display once complete
-    DownloadPoll(API_URL + 'download', 5000)
+    DownloadPoll(CERT_URL, filename, 5000)
                 .then(() => {
                         this.setState({...this.state,
                                         isParsing: false})
