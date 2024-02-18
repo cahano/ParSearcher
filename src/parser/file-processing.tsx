@@ -74,6 +74,7 @@ export class FileProcessor extends React.Component<{},
                  })
     })
 
+    console.log("All files uploaded, now polling for downloads")
 
     Array.from(browse_files).forEach((file: any) => {
       console.log("Downloading ",file)
@@ -165,6 +166,12 @@ export class FileProcessor extends React.Component<{},
 
   }
   
+  // HANDLING DOWNLOAD
+  public parsePlaceHolder() {
+
+    console.log("pass")
+
+  }
   
   public render() {
     return (
@@ -229,7 +236,7 @@ export class FileProcessor extends React.Component<{},
                       {/* Parse button */}
                       <div className="parse_btn">
                         <button type="submit"
-                                onClick={(event) => this.handleDownload()}
+                                onClick={(event) => this.parsePlaceHolder()}
                                 disabled>
                           Parse
                         </button>
@@ -267,7 +274,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload()}
+                                    onClick={(event) => this.parsePlaceHolder()}
                                     disabled>
                               Parse
                             </button>
@@ -277,7 +284,7 @@ export class FileProcessor extends React.Component<{},
 
                         <div className="parse_btn">
                             <button type="submit"
-                                    onClick={(event) => this.handleDownload()}>
+                                    onClick={(event) => this.parsePlaceHolder()}>
                               Parse
                             </button>
                         </div>
