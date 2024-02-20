@@ -158,7 +158,7 @@ export class FileProcessor extends React.Component<{},
 
     // Ping tornado 'download' api until downloadable is present, then download
     //// And update state to remove 'parsing' display once complete
-    DownloadPoll(CERT_URL, filename, 5000)
+    DownloadPoll(CERT_URL, filename)
                 .then(() => {
                         this.setState({...this.state,
                                         isParsing: false})
