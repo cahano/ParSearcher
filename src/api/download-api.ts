@@ -56,6 +56,7 @@ export async function DownloadPoll(url: string, filename: string, time: any): Pr
                                             { responseType: 'arraybuffer' })
                 // run polling delay (e.g. 5 seconds)
                 if (polling) {
+                    console.log("Wait ", time)
                     await timeout(time);
                 }
                 // Check status code
