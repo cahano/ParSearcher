@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
                 {({ signOut, user }) => (
                     <div>
                         {/* NEED TO FORWARD TO PARSER ONCE LOGGED IN - MAY JUST NEED TO CALL THAT WIDGET HERE? */}
-                        <p>Welcome Idiot</p>
+                        <p>Welcome!</p>
                         {/* "signing out" user from session (i.e. removing their creds from session storage) */}
                         <button onClick={signOut}>Sign out</button>
                     </div>
