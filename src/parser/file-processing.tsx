@@ -11,6 +11,7 @@ import { StartPyParse, DownloadPoll } from '../api/download-api'
 
 import { numberWithCommas, API_URL, CERT_URL } from "../constants";
 import './static/file-processing.css';
+import { error } from "console";
  
 
 export class FileProcessor extends React.Component<{},
@@ -74,6 +75,12 @@ export class FileProcessor extends React.Component<{},
                                    isLoaded: true,
                                    isUploading: false})
 
+                 }).then(() => {
+                  console.log("Downloading ",file)
+                  // make a POST request to the File Upload API
+                  this.handleDownload(file.name)
+                 }).catch(error => {
+                  console.log(`Error while uploading file ${file.name} \n ${error}`)
                  })
       asyncUploadRequests.push(request)
     })
@@ -82,18 +89,18 @@ export class FileProcessor extends React.Component<{},
       // can use any to at least try if some fail? 
       // -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
       const uploadResults = Promise.all(asyncUploadRequests)
-      console.log("All files uploaded, now polling for downloads")
+      console.log("All files uploaded, now polling for downloads", uploadResults)
     } catch (error) {
       console.error("Error while uploading file(s): ", error)
     }
       
 
-    Array.from(browseFiles).forEach((file: any) => {
-      console.log("Downloading ",file)
-      // make a POST request to the File Upload API
-      this.handleDownload(file.name)
+    // Array.from(browseFiles).forEach((file: any) => {
+    //   console.log("Downloading ",file)
+    //   // make a POST request to the File Upload API
+    //   this.handleDownload(file.name)
 
-    })
+    // })
 
   };
 

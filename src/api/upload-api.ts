@@ -3,6 +3,7 @@
 //
 
 import axios from 'axios';
+const UPLOAD_TIMEOUT = 1000
 
 export async function axiosPDFPost(formData: FormData, filename: string, url: string): Promise<void> {
 
@@ -39,7 +40,7 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
             console.log("Error: ", error.response);
         })
 
-    return Promise.resolve()
+    return Promise.resolve();
 
 }
 
