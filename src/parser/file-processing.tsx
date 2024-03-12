@@ -75,6 +75,10 @@ export class FileProcessor extends React.Component<{},
                                    isLoaded: true,
                                    isUploading: false})
 
+                 }).then(() => {
+                  console.log("Downloading ",file)
+                  // make a POST request to the File Upload API
+                  this.handleDownload(file.name)
                  })
       asyncUploadRequests.push(request)
     })
@@ -88,11 +92,11 @@ export class FileProcessor extends React.Component<{},
       console.error("Error while uploading file(s): ", error)
     }
 
-    Array.from(browseFiles).forEach((file: any) => {
-      console.log("Downloading ",file)
-      // make a POST request to the File Upload API
-      this.handleDownload(file.name)
-    })
+    // Array.from(browseFiles).forEach((file: any) => {
+    //   console.log("Downloading ",file)
+    //   // make a POST request to the File Upload API
+    //   this.handleDownload(file.name)
+    // })
 
   };
 
