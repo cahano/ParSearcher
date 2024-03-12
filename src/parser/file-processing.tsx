@@ -47,21 +47,24 @@ export class FileProcessor extends React.Component<{},
 
   public handleBrowseUpload (event: any) {
     // get the selected file(s) from the input
-    const browse_files = event.target.files;
+    const browseFiles = event.target.files;
+    // list of async requests to file upload
+    const asyncUploadRequests: Promise<any>[] = [];
+
     // Setting uploaded file state
     this.setState({...this.state,
                    isUploading: true,
-                   files: Array.from(browse_files)})
+                   files: Array.from(browseFiles)})
 
     // Loop through updated files
-    Array.from(browse_files).forEach((file: any) => {
+    Array.from(browseFiles).forEach((file: any) => {
       console.log(file)
       // create a new FormData object and append the file to it
       //// The below will likely need to go outisde of this for loop for multiple file parsing
       const formData = new FormData();
       formData.append("file", file);
       // make a POST request to the File Upload API
-      axiosPDFPost(formData,
+      const request = axiosPDFPost(formData,
                   //  API_URL + "upload")
                   file.name,
                   CERT_URL)
@@ -72,11 +75,20 @@ export class FileProcessor extends React.Component<{},
                                    isUploading: false})
 
                  })
+      asyncUploadRequests.push(request)
     })
 
-    console.log("All files uploaded, now polling for downloads")
+    try{
+      // can use any to at least try if some fail? 
+      // -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
+      const uploadResults = Promise.all(asyncUploadRequests)
+      console.log("All files uploaded, now polling for downloads")
+    } catch (error) {
+      console.error("Error while uploading file(s): ", error)
+    }
+      
 
-    Array.from(browse_files).forEach((file: any) => {
+    Array.from(browseFiles).forEach((file: any) => {
       console.log("Downloading ",file)
       // make a POST request to the File Upload API
       this.handleDownload(file.name)
