@@ -51,7 +51,7 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                 )
                 
                 let signedGetURL: string = <string>certCall.data 
-                console.log("Got signed URL, polling for file ", filename)
+                console.log(`Got signed URL ${signedGetURL}, polling for file `, filename)
                 const res = await axios.get(signedGetURL,
                                             { responseType: 'arraybuffer' })
 
@@ -86,6 +86,7 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                     output_el.click();
 
                     // returning promise here so state updates only AFTER download occurs
+                    console.log(`Download ${filename} finished`)
                     return Promise.resolve();
                 }
             } catch (e) {

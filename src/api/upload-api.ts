@@ -38,8 +38,5 @@ export async function axiosPDFPost(formData: FormData, filename: string, url: st
         })
         .catch((error) => {
             console.log("Error: ", error.response);
-        }).then( () => Promise.resolve())
-
-    
+        }).then( () => Promise.resolve()) 
 }
-

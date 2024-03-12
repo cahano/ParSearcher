@@ -74,11 +74,10 @@ export class FileProcessor extends React.Component<{},
                     this.setState({...this.state,
                                    isLoaded: true,
                                    isUploading: false})
+                    console.log("Downloading ",file)
+                    // make a POST request to the File Upload API
+                    this.handleDownload(file.name)
 
-                 }).then(() => {
-                  console.log("Downloading ",file)
-                  // make a POST request to the File Upload API
-                  this.handleDownload(file.name)
                  })
       asyncUploadRequests.push(request)
     })
