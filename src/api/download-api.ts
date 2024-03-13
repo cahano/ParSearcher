@@ -30,28 +30,27 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
     // Controls loop that pings API
     let polling = true;
     filename = filename.replace(".pdf", ".xlsx")
-    filename = "output_" + filename
+    const output_filename = "output_" + filename
     // Awaiting completion of polling (i.e. awaiting response code of '200')
     await (async function doPolling() {
 
         while (polling) {
 
             try {
-                console.log("Getting signed URL for file ", filename)
+                console.log("Getting signed URL for file ", output_filename)
                 let certCall = await axios.post(url,
                     {
                         operation: "get_s3_signed_get",
                         payload: {
                             "bucket_stage": "dev",
-                            "filename": filename,
-                            // TODO: need to get user from user login
+                            "filename": filename, // send the original filename
                             "owner_tag": "admin"
                         }
                     }
                 )
                 
                 let signedGetURL: string = <string>certCall.data 
-                console.log(`Got signed URL ${signedGetURL}, polling for file `, filename)
+                console.log(`Got signed URL ${signedGetURL}, polling for file `, output_filename)
                 const res = await axios.get(signedGetURL,
                                             { responseType: 'arraybuffer' })
 
@@ -81,12 +80,12 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                     output_el.href = URL;
                     // Simulating link click
                     //// NEED TO MAKE THIS FILE NAME DYNAMIC - SAME AS INPUT NAME
-                    output_el.download = filename;
+                    output_el.download = output_filename;
                     // force download
                     output_el.click();
 
                     // returning promise here so state updates only AFTER download occurs
-                    console.log(`Download ${filename} finished`)
+                    console.log(`Download ${output_filename} finished`)
                     return Promise.resolve();
                 }
             } catch (e) {
