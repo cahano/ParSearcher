@@ -20,8 +20,8 @@ export async function StartPyParse(url: string): Promise<void> {
 }
 
 // Aux func for polling - determines time between API pings 
-const timeout = (time:any) =>
-  new Promise((resolve) => setTimeout(resolve, time));
+const timeout = (time:number) =>
+  new Promise((resolve) => setTimeout(resolve, time*1000));
 
 // Ping inputted URL every inputted # of sec until status code '200' is received
 //// Then execute client file download
