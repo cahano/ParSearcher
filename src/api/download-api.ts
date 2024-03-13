@@ -5,9 +5,9 @@
 
 import axios, { AxiosError } from 'axios';
 
-
-const TIME_LIMIT_MIN = 30 //in minutes
+const TIME_LIMIT = 20 * 60 //in seconds
 const DEFAULT_WAIT_SEC = 30
+const MAX_RETRIES = Math.round(TIME_LIMIT/DEFAULT_WAIT_SEC)
 
 
 // Initiaties py-side parsing for eventual output file download
@@ -45,7 +45,9 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                 }
             }
         )
-        while (polling) {
+        // TODO: add timeout here
+        let retries = 0
+        while (polling && retries <= MAX_RETRIES) {
 
             try {
                 let res = null
@@ -58,9 +60,9 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                 } catch (error) {
                     if (axios.isAxiosError(error)) {
                         const axiosError = error as AxiosError;
-                
+                        // We get a 403 error forbidden error if the file we're querying isn't here. That's fine, let's just wait
+                        // and re call it. 
                         if (axiosError.response?.status === 403) {
-                            // Handle 403 Forbidden error here
                             console.error(`File ${filename} is not parsed yet, 403 error... waiting for it to show up`);
                 
                             await timeout(DEFAULT_WAIT_SEC)
