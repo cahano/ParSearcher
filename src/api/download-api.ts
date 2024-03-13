@@ -3,11 +3,11 @@
 //
 
 
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 
 const TIME_LIMIT_MIN = 30 //in minutes
-const DEFAULT_WAIT_SEC = 10
+const DEFAULT_WAIT_SEC = 30
 
 
 // Initiaties py-side parsing for eventual output file download
@@ -33,36 +33,54 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
     const output_filename = "output_" + filename
     // Awaiting completion of polling (i.e. awaiting response code of '200')
     await (async function doPolling() {
-
+        
+        console.log("Getting signed URL for file ", output_filename)
+        let certCall = await axios.post(url,
+            {
+                operation: "get_s3_signed_get",
+                payload: {
+                    "bucket_stage": "dev",
+                    "filename": filename, // send the original filename
+                    "owner_tag": "admin"
+                }
+            }
+        )
         while (polling) {
 
             try {
-                console.log("Getting signed URL for file ", output_filename)
-                let certCall = await axios.post(url,
-                    {
-                        operation: "get_s3_signed_get",
-                        payload: {
-                            "bucket_stage": "dev",
-                            "filename": filename, // send the original filename
-                            "owner_tag": "admin"
-                        }
-                    }
-                )
+                let res = null
                 
                 let signedGetURL: string = <string>certCall.data 
                 console.log(`Got signed URL ${signedGetURL}, polling for file `, output_filename)
-                const res = await axios.get(signedGetURL,
-                                            { responseType: 'arraybuffer' })
+                try{
+                    res = await axios.get(signedGetURL,
+                        { responseType: 'arraybuffer' })
+                } catch (error) {
+                    if (axios.isAxiosError(error)) {
+                        const axiosError = error as AxiosError;
+                
+                        if (axiosError.response?.status === 403) {
+                            // Handle 403 Forbidden error here
+                            console.error(`File ${filename} is not parsed yet, 403 error... waiting for it to show up`);
+                
+                            await timeout(DEFAULT_WAIT_SEC)
+                
+                            // Continue to the next iteration of the loop
+                            continue;
+                        }
+                    }
+                    throw error
+                }
 
                 console.log("Download Response: ", res)
-                // run polling delay (e.g. 5 seconds)
-                if (polling) {
-                    console.log("Wait ", time)
-                    await timeout(time);
-                }
+                // // run polling delay (e.g. 5 seconds)
+                // if (polling) {
+                //     console.log("Wait ", time)
+                //     await timeout(time);
+                // }
                 // res already has 
                 // Check status code
-                if (polling && res.data) {
+                if (polling && res && res.data) {
                     // If 200, end polling and run file download
                     stopPolling();
 
@@ -90,7 +108,7 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                 }
             } catch (e) {
                 stopPolling();
-                throw new Error("Polling cancelled due to API error");
+                throw new Error(`Polling cancelled due to error: ${e}`);
             }
         }
     })();
