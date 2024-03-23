@@ -1,32 +1,42 @@
 //
-// DOM Base Router for Caliburn Site
+// DOM Base Router for parsearch Site
 //
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
-// Pages viewable to anyone
-import TeamPage from '../team/TeamPage';
-import HomePage from '../home/HomePage';
-import LoginPage from '../login/loginPage';
-import InquirePage from '../inquire/InquirePage';
+// Public pages
+import HomePage from '../pages/public/homePage';
+import LoginPage from "../pages/public/loginPage";
+import SolutionsPage from "../pages/public/solutionsPage";
+import InquirePage from "../pages/public/inquirePage";
+import TeamPage from "../pages/public/teamPage";
 
-// Custom routes
-import { PrivateRoutes } from './PrivateRoutes' 
+// Protected route
+import ProtectedRoute from './protectedRoute' 
+// Private pages
+import CorePage from "../pages/private/corePage";
 
 
 export const AppRouter = () => {
     return (
             <BrowserRouter>
                 <Routes>
+
                     {/* Pages requiring auth */}
-                    <Route path="/*" element={<PrivateRoutes />}/>
+                    <Route element={<ProtectedRoute />}>
+                        <Route path="/core" element={<CorePage />} />
+                    </Route>
+
                     {/* Pages viewable to anyone */}
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/team" element={<TeamPage />} />
-                    <Route path="/inquire" element={<InquirePage />} />
+                    <Route path="/solutions" element={<SolutionsPage />} />
                     <Route path="/login" element={<LoginPage />} />
+                    <Route path="/inquire" element={<InquirePage />} />
+                    <Route path="/team" element={<TeamPage />} />
+
                     {/* Redirects any other address extensions to the home page */}
                     <Route path='/*' element={<Navigate to='/' replace />} />
+
                 </Routes>
             </BrowserRouter>
 

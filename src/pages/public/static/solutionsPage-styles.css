@@ -1,0 +1,76 @@
+
+/* ParSearch Solutions styles */
+
+#sol_frame {
+    margin-top: 0vh;
+    margin: auto;
+    /* Creating scroll bar for div below nav bar*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* Managing scroll behavior */
+    scroll-behavior: smooth;
+    height: 94vh;
+    width: 100vw;
+}
+
+#lead {
+    margin-top: 6vh;
+    text-align: center;
+    font-size: 3vw;
+    color: #d9d9d9;
+}
+
+/* Solutions landing page table */
+#sol_table {
+    margin: auto;
+    margin-top: 7vh;
+    margin-bottom: 10vh;
+    width: 70vw;
+    /* text-align: left; */
+    background-color: transparent;
+}
+.st_item {
+    height: 21vh;
+    /* border: .1vw solid #d9d9d9 !important; */
+    vertical-align: middle;
+    padding: 0.2vw 1vw 0vw 1vw;
+}
+.st_item:hover {
+    background-color: #222A35;
+    height: 22vh;
+    border: .1vw solid rgb(137, 137, 255) !important;
+    border-radius: .3vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 1vw 1vw 2vw 1vw !important;
+}
+.st_item h2 {
+    margin-top: 4vh;
+    margin-left: 2vw;
+    font-size: 3.4vw;
+    float: left;
+    color: rgb(137, 137, 255);
+}
+.st_item p {
+    margin-top: 9vh;
+    font-size: 1.6vw;
+    float: right;
+    color: #d9d9d9;
+}
+
+/* Individual product/solution formatting */
+
+.product_title {
+    margin: auto;
+    font-size: 5vw;
+    color: rgb(137, 137, 255);
+    font-weight: bold;
+}
+
+/* Text below product title */
+.sub_txt {
+    margin-bottom: 40vh;
+}
+
+/* Removing border after section has been clicked on */
+a:visited {
+    border: 0 !important;
+}

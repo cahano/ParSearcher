@@ -1,0 +1,70 @@
+
+/* ParSearch Inquire page styles */
+
+/* Title texts */
+.header_txt {
+  margin-top: 8vh;
+  margin-left: 5vw;
+  margin-bottom: 16vh;
+  width: 80vw;
+
+}
+.header_txt h1 {
+  font-size: 6vh;
+  color: #d9d9d9;
+}
+#lets_chat {
+  color: rgb(137, 137, 255);
+}
+
+
+/* Formatting contact card props */
+.contact_card {
+  margin-bottom: -1vh;
+}
+/* Phone # section */
+.contact_static {
+  float: left;
+  margin-left: 2vw;
+  color: #222A35;
+}
+.contact_static h1{
+  color: rgb(137, 137, 255);
+}
+
+/* Email form */
+.contact_form {
+  float: right;
+  margin-right: 2vw;
+  width: 40vw;
+}
+.contact_form h1 {
+  color: rgb(137, 137, 255);
+  width: 45vw;
+}
+.contact_form input {
+  color: rgb(137, 137, 255);
+  float: right;
+  width: 40vw;
+  height: 2.5vh;
+  padding: 0vw 0vw 0vw 0vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  margin-bottom: 2vh;
+}
+.contact_form button {
+  margin-top: 2vh;
+  margin-left: 10vw;
+  margin-bottom: 2vh;
+  width: 6vw;
+  background-color: rgb(137, 137, 255);
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0.2vh;
+}
+.contact_form button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) .2vw .1vw .3vw .1vw !important;
+  border: 0.1vw solid #222A35;
+  font-weight: bold;
+}

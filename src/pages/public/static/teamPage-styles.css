@@ -1,0 +1,94 @@
+
+/* ParSearch Team page styles */
+
+
+.sect_split {
+    font-size: 8vh;
+}
+
+ul li {
+    font-size: 2.6vh;
+    color: rgb(137, 137, 255);
+}
+
+/* For dates */
+.s_date {
+    font-size: 1.5vh;
+}
+
+.about_frame {
+    margin-top: 0vh;
+    margin: auto;
+    /* Creating scroll bar for div below nav bar*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 94vh;
+    width: 100vw;
+}
+
+.header_text{
+    margin-bottom: 10vh;
+}
+#top_title {
+    text-align: center;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    font-size: 10vh;
+    color: rgb(137, 137, 255);
+}
+
+#scnd_title {
+    text-align: center;
+    margin-top: -6vh;
+    margin-left: 5vw;
+    margin-bottom: 30vh;
+    font-size: 10vh;
+    color: rgb(137, 137, 255);
+}
+#top_subtitle {
+    text-align: center;
+    color: #d9d9d9;
+    font-size: 4.5vh;
+}
+#scnd_subtitle {
+    text-align: center;
+    color: #d9d9d9;
+    font-size: 4.5vh;
+}
+/* Section containing all profiles */
+
+/* Each individual profile props */
+.mmb_title {
+    font-size: 3vh;
+}
+.j_title {
+    font-size: 2vh;
+/* font-style: italic; */
+}
+
+.mmb_header {
+    display: block;
+    margin-bottom: 2vh;
+    height: 35vh;
+}
+.mmb_header .mmb_pic {
+    float: left;
+    border: 1px solid #161616;
+    border-radius: 0.5vw;
+
+    height: 33vh;
+    width: 26vw;
+}
+.mmb_header .mmb_sum {
+    float: right;
+    /* border: 1px solid rgb(137, 137, 255); */
+    font-size: 3vh;
+
+    height: 33vh;
+    width: 61vw;
+}
+.mmb_body {
+    font-size: 2vh;
+    color: rgb(137, 137, 255);
+}
+

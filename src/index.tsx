@@ -1,42 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './consts/globalStyles.css';
 import reportWebVitals from './reportWebVitals';
 
-import { Amplify } from 'aws-amplify';
-import awsExports from './login/auth/aws-exports';
-import { Authenticator, View } from '@aws-amplify/ui-react';
-import { AppRouter } from './routes/AppRouter'
+import { AppRouter } from './routes/appRouter'
+import { ProvideAuth } from './hooks/useAuth'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 
-// Configuring Amplify <-> Cognito cnxn
-Amplify.configure({
-  Auth: { 
-    Cognito: {
-    userPoolId: awsExports.USER_POOL_ID,
-    userPoolClientId: awsExports.USER_POOL_APP_CLIENT_ID
-    }
-  }
-})
+const ParSearch:React.FC = () => {
 
-
-export default function Parsearch() {
-  // Wrapping app with AWS authenticator
   return (
-    <Authenticator.Provider>
-      <AppRouter />
-    </Authenticator.Provider>
-  );
+      // Wrapping app in Auth provider 
+      <ProvideAuth>
+        <AppRouter />
+      </ProvideAuth>
+  )
 }
-
 
 root.render(
   <React.StrictMode>
-    <Parsearch />
+    <ParSearch />
   </React.StrictMode>
 );
 

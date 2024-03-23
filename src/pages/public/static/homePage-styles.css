@@ -1,0 +1,150 @@
+
+/* ParSearch Home page styles */
+
+#home_frame {
+    height: 94vh;
+    width: 100vw;
+    margin-top: 0vh;
+    margin: auto;
+    /* Creating scroll bar for div below nav bar*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* Managing scroll behavior */
+    scroll-behavior: smooth;
+}
+
+#title_sect {
+    color: rgb(137, 137, 255);
+}
+/* For controlling inner page scroll */
+#title_sect a {
+    text-decoration: none;
+}
+#title_sect a:hover {
+    text-decoration: underline;
+}
+#lead_line {
+    color: rgb(137, 137, 255);
+    width: 90vw;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 3.8vw;
+}
+
+#sec_line {
+    color: #d9d9d9;
+    margin-top: 10vh;
+    margin-right: 5vw;
+    text-align: right;
+    font-size: 4vw;
+    margin-bottom: 15vh;
+}
+
+#thd_line {
+    /* color: #d9d9d9; */
+    margin: auto;
+    text-align: center;
+    text-align: center;
+    font-size: 1.9vw;
+    width: 78vw;
+    margin-bottom: 12vh;
+}
+
+#forth_line {
+    color: #222A35;
+    width: 70vw;
+    margin: auto;
+    margin-bottom: -13vh;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+/* under page */
+#under_page {
+    height: 113vh;
+}
+
+#up_title {
+    color: rgb(137, 137, 255);
+    /* margin-left: 5vw; */
+    margin-top: 20vh;
+    text-align: left;
+    width: 92vw;
+    font-size: 3vw;
+    padding: 1vw;
+}
+
+.home_p {
+    margin: auto;
+    margin-top: -2vh;
+    text-align: center;
+    width: 80vw;
+    color: #222A35;
+    font-size: 1.4vw;
+    padding: 1vw 1vw 1vw 1vw;
+}
+
+#home_table {
+    margin: auto;
+    margin-top: 7vh;
+    width: 80vw;
+    text-align: center;
+}
+
+.ht_item {
+    display: inline-table;
+    width: 19vw;
+    height: 45vh;
+    border: 1px solid black;
+}
+
+.ht_item h3 {
+    color: rgb(137, 137, 255);
+    font-size: 3vh;
+    margin-bottom: 22vh;
+}
+
+.ht_item p {
+    font-size: 1.8vh;
+    color: #222A35;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    min-height: 6vh;
+    /* max-height: 5vh; */
+}
+
+.ht_item button {
+    
+    margin-top: 2vh;
+
+    width: 15vw;
+    height: 4vh;
+
+    background-color: rgb(137, 137, 255);
+    color: #222A35;
+    box-shadow: none !important;
+    border: none;
+    border-radius: 1vh;
+
+    padding: 0vw 0vw 0vw 0vw;
+    
+    font-size: 1.8vh;
+    font-weight: bold;
+}
+.ht_item button:hover {
+    margin-top: 2vh;
+
+    width: 15vw;
+    height: 4vh;
+
+    background-color: rgb(137, 137, 255);
+    color: #222A35;
+    box-shadow: rgba(0, 0, 0, 0.24) 0vw 0.5vh 0.5vh !important;
+    border: 0.1vw solid #222A35;
+    border-radius: 1vh;
+
+    padding: 0vw 0vw 0vw 0vw;
+    
+    font-size: 1.8vh;
+    font-weight: bold;
+}

@@ -1,0 +1,30 @@
+
+/* Core page styles */
+
+.main_frame {
+
+    margin: auto;
+    width: 70vw;
+    min-height: 60vh;
+    max-height: 80vh;
+    color: aliceblue;
+    background-color: #161616;
+    display: flex;
+    border-radius: 3px;
+    font-size: 1.7vh;
+  
+  }
+  
+  .intro_box {
+  
+    text-align: left;
+    margin: auto;
+    margin-top: 0vh;
+    width: 65vw;
+    height: 5vh;
+    color: rgb(214, 218, 215);
+    background-color: #161616;
+    font-size: 1.7vh;
+  
+  }
+  
