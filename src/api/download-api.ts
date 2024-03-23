@@ -63,7 +63,7 @@ export async function DownloadPoll(url: string, filename: string, time: any=DEFA
                         // We get a 403 error forbidden error if the file we're querying isn't here. That's fine, let's just wait
                         // and re call it. 
                         if (axiosError.response?.status === 403) {
-                            console.error(`File ${filename} is not parsed yet, 403 error... waiting for it to show up`);
+                            console.log(`File ${filename} is not parsed yet, 403 error... waiting for it to show up`);
                 
                             await timeout(DEFAULT_WAIT_SEC)
                 
