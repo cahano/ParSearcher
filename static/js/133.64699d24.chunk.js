@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[133],{3514:(a,t,n)=>{n.d(t,{J:()=>r});var e=n(4709);class r{constructor(){this.quantity=2}load(a){if(!a)return;const t=a.quantity;void 0!==t&&(this.quantity=(0,e.Cs)(t))}}},133:(a,t,n)=>{n.d(t,{loadExternalRemoveInteraction:()=>e});n(3514);async function e(a,t=!0){await a.addInteractor("externalRemove",(async a=>{const{Remover:t}=await n.e(3916).then(n.bind(n,3916));return new t(a)}),t)}}}]);
+//# sourceMappingURL=133.64699d24.chunk.js.map

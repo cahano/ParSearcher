@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[9573],{9573:(a,n,e)=>{async function c(a,n=!0){await a.addInteractor("externalBounce",(async a=>{const{Bouncer:n}=await e.e(228).then(e.bind(e,228));return new n(a)}),n)}e.d(n,{loadExternalBounceInteraction:()=>c})}}]);
+//# sourceMappingURL=9573.b63c6704.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[501],{501:(a,e,s)=>{s.d(e,{Pauser:()=>t});var r=s(4709);class t extends r.L8{constructor(a){super(a),this.handleClickMode=a=>{if("pause"!==a)return;const e=this.container;e.animationStatus?e.pause():e.play()}}clear(){}init(){}interact(){}isEnabled(){return!0}reset(){}}}}]);
+//# sourceMappingURL=501.eb860765.chunk.js.map

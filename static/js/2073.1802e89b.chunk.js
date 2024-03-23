@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[2073],{2073:(a,r,e)=>{async function t(a,r=!0){await a.addParticleUpdater("strokeColor",(async a=>{const{StrokeColorUpdater:r}=await e.e(9887).then(e.bind(e,9887));return new r(a)}),r)}e.d(r,{loadStrokeColorUpdater:()=>t})}}]);
+//# sourceMappingURL=2073.1802e89b.chunk.js.map
