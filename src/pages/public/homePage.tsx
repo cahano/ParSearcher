@@ -11,14 +11,7 @@ import NavBar from './../../components/header'
 import Footer from './../../components/footer'
 
 
-import { loadSlim } from "@tsparticles/slim"
-import Particles from "@tsparticles/react";
-
 const HomePage: React.FC = () => {
-
-  const particlesInit = (engine: any) => {
-    loadSlim(engine);
-  };
 
   // Importing router navigation hook
   const navigate = useNavigate();
