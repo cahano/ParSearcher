@@ -1,2 +1,0 @@
-"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[5657],{5657:(a,p,t)=>{async function c(a,p=!0){await a.addParticleUpdater("opacity",(async a=>{const{OpacityUpdater:p}=await t.e(8512).then(t.bind(t,8512));return new p(a)}),p)}t.d(p,{loadOpacityUpdater:()=>c})}}]);
-//# sourceMappingURL=5657.1b354cc2.chunk.js.map

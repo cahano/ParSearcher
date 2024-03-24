@@ -1,2 +1,0 @@
-"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[4208],{4208:(a,e,n)=>{async function p(a,e=!0){const{LineDrawer:p}=await n.e(5979).then(n.bind(n,5979));await a.addShape("line",new p,e)}n.d(e,{loadLineShape:()=>p})}}]);
-//# sourceMappingURL=4208.75a943b6.chunk.js.map

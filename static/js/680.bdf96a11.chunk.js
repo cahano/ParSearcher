@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[680],{680:(a,e,s)=>{async function n(a,e=!0){await a.addMover("base",(async()=>{const{BaseMover:a}=await s.e(294).then(s.bind(s,7294));return new a}),e)}s.d(e,{loadBaseMover:()=>n})}}]);
+//# sourceMappingURL=680.bdf96a11.chunk.js.map

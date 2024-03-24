@@ -1,2 +1,0 @@
-"use strict";(globalThis.webpackChunkparsearch_app=globalThis.webpackChunkparsearch_app||[]).push([[1469],{1469:(a,n,e)=>{async function i(a,n=!0){await async function(a,n=!0){const{PolygonDrawer:i}=await e.e(503).then(e.bind(e,503));await a.addShape("polygon",new i,n)}(a,n),await async function(a,n=!0){const{TriangleDrawer:i}=await e.e(720).then(e.bind(e,720));await a.addShape("triangle",new i,n)}(a,n)}e.d(n,{loadPolygonShape:()=>i})}}]);
-//# sourceMappingURL=1469.c3c7fef6.chunk.js.map
