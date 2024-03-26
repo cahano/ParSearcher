@@ -19,8 +19,8 @@
 
 
 /* Formatting contact card props */
-.contact_card {
-  margin-bottom: -1vh;
+#contact_card {
+  margin-bottom: 7vh;
 }
 /* Phone # section */
 .contact_static {
