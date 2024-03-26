@@ -48,7 +48,9 @@ const HomePage: React.FC = () => {
           <h2 id="thd_line">Despite the growing power of AI, millions of businesses
                             still handle data <i>no differently than 20 years ago.</i></h2>
 
-          <a className='sol_link' href='#up_title'><h2 id="forth_line"><i>Let's finally change that.</i></h2></a>
+          <a className='sol_link' href='#_scrollto'>
+            <h2 id="forth_line"><i>Let's finally change that.</i></h2>
+          </a>
 
         </div>
 
@@ -56,6 +58,8 @@ const HomePage: React.FC = () => {
         <div id="under_page" className='content_card'>
           <br/>
           <h1 id="up_title">ParSearch Platforms</h1>
+          {/* _scrollto controls the location of so_link above */}
+          <div id="_scrollto"></div>
           <p className='home_p'><b>ParSearch was created to meaningfuly modernize workflows
                                 and data handling for businesses requiring
                                 100% trust in their data.</b></p>

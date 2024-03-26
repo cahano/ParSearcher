@@ -73,6 +73,19 @@
     font-size: 3vw;
     padding: 1vw;
 }
+/* Used for guiding inpage auto-scroll */
+/* Anchoring direct to title altered 'up' content position */
+/* Likely results from #...:after effects */
+#_scrollto {
+    position: relative;
+    /* Hiding element */
+    border: 0.1vh transparent solid;
+    height: 0vh;
+    /* This controls where the scroller stops */
+    margin-top: -19vh;
+    margin-bottom: 19vh;
+    width: 10vw;
+}
 
 .home_p {
     margin: auto;
@@ -84,6 +97,7 @@
     padding: 1vw 1vw 1vw 1vw;
 }
 
+/* table containing page guide */
 #home_table {
     margin: auto;
     margin-top: 7vh;
@@ -91,19 +105,19 @@
     text-align: center;
 }
 
+/* Each item in the page guide */
 .ht_item {
     display: inline-table;
     width: 19vw;
     height: 45vh;
+    /* border will be temporary */
     border: 1px solid black;
 }
-
 .ht_item h3 {
     color: rgb(137, 137, 255);
     font-size: 3vh;
     margin-bottom: 22vh;
 }
-
 .ht_item p {
     font-size: 1.8vh;
     color: #222A35;
@@ -113,6 +127,7 @@
     /* max-height: 5vh; */
 }
 
+/* Buttons on the under page */
 .ht_item button {
     
     margin-top: 2vh;
