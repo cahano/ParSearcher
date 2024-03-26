@@ -3,31 +3,28 @@
 //
 
 import './static/corePage-styles.css';
-import { FileProcessor } from './file-processing'
+import { Parts } from './../../components/particles'
+import NavBar from './../../components/header'
 import Footer from '../../components/footer'
-import './static/corePage-styles.css';
+import { FileProcessor } from './file-processing'
 
 
 const CorePage: React.FC = () => {
 
     return (
 
-        <div className="whole_main_page">
+      <div className="parent">
 
-        <div className='main_navbar'>
-          <a className="active" href="./parser">Parser</a>
-          <a className="logout" href="./">Logout</a>
-          {/* REMOVING THESE UNTIL NEXT PHASE */}
-          {/* <a href="./#/team">Deal Repos</a>
-          <a href="./#/team">Analytics</a> */}
+        <NavBar />
+
+        <div id="core_title">
+          <h1>Core</h1>
         </div>
 
         <div className="main_frame">
 
           <div className="intro_box">
-
-            <h1>Parser</h1>
-
+            
             <p> Upload a single, or up to [1mm], PDF documents from which
                 you wish to abstract data. Select your use-case (e.g. 100 Term Sheets to XLSX)
                 and relevant parameters (e.g. input XML/JSON specifying search logic).
@@ -43,6 +40,11 @@ const CorePage: React.FC = () => {
         </div>
         
         <Footer />
+
+        {/* Adding tsparticles background */}
+        <div id="parts">
+            <Parts />
+        </div>
 
       </div>
 

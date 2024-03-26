@@ -3,8 +3,9 @@
 //
 
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
+import { PRIVATE_ROUTES } from "../consts/consts"
 import { useAuth } from "../hooks/useAuth"
 
 
@@ -14,6 +15,33 @@ const NavBar: React.FC = () => {
     // Calling auth hook for navbar
     const { isAuthenticated, username } = useAuth();
 
+    // calling use location to render header based on current pages
+    const location = useLocation();
+
+    // Navbar for PRIVATE pages
+    if (PRIVATE_ROUTES.indexOf(location.pathname) > -1) {
+
+        return (
+            <nav id="navbar_parent">
+
+                <NavLink to="/">
+                    <div id="psch_nav">
+                        <img id="psch_logo" src="../psch_logo_dark.png"/>
+                    </div>
+                </NavLink>
+                
+                <NavLink to="/landing" className={"nactive"}>
+                    <div id="login_nav">
+                        <button>{username}</button>
+                    </div>
+                </NavLink>
+
+            </nav>
+        )
+
+    }
+
+  // Navbar for PUBLIC pages
   return (
 
     <nav id="navbar_parent">
@@ -25,9 +53,9 @@ const NavBar: React.FC = () => {
             </div>
         </NavLink>
 
-        {/* Conditionally rendering login/logout */}
+        {/* Conditionally rendering login/username */}
         {isAuthenticated ? (
-            <NavLink to="/core" replace={true} className={"nactive"}>
+            <NavLink to="/landing" className={"nactive"}>
                 <div id="login_nav">
                     <button>{username}</button>
                 </div>

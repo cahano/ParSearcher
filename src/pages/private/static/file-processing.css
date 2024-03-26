@@ -2,7 +2,6 @@
 /* Parser body styles */
 
 .drag_box {
-
     margin-top: 3vh;
     margin-left: auto;
     justify-content: center;
@@ -11,6 +10,7 @@
     border: 0.35vh dashed rgb(137, 137, 255);
     border-radius: 0.5vw;
     font-size: 1.65vh;
+    color: #d9d9d9;
 }
 
 

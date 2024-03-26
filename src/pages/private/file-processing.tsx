@@ -197,7 +197,7 @@ export class FileProcessor extends React.Component<{},
         <div
           className="drag_box"
           style={{
-            backgroundColor: this.state.isOver ? '#222222' : '#161616',
+            backgroundColor: this.state.isOver ? '#222222' : '#222a35',
           }}
           onDragOver={this.handleDragOver}
           onDragLeave={this.handleDragLeave}

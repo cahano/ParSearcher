@@ -1,0 +1,45 @@
+
+/* ParSearch private landing page styles */
+
+#landing_title {
+    margin-left: 5vw;
+}
+#landing_title h1 {
+    font-size: 3vw;
+    color: rgb(137, 137, 255);
+}
+
+/* Product table */
+#tools {
+    /* Controlling footer... */
+    margin-bottom: 9vh;
+}
+/* Each product */
+#ut_table {
+    text-align: center;
+    padding: 1vw 0vw 2vw 0vw;
+}
+
+.ut_item {
+    display: inline-table;
+    width: 19vw;
+    height: 45vh;
+    /* border will be temporary */
+    border: 1px solid black;
+    border-radius: 0.3vw;
+}
+.ut_item:hover {
+    box-shadow: rgba(0, 0, 0, 0.59) 0vw .2vh .3vw .2vh
+}
+/* Create uniform spaces between listed products */
+.ut_spacer {
+    display: inline-block;
+    width: 5vw;
+    height: 0vh;
+}
+
+.ut_title {
+    margin: none;
+    font-size: 3vw;
+    color: rgb(137, 137, 255);
+}

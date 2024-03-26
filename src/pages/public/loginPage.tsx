@@ -24,7 +24,7 @@ const LoginPage: React.FC = () => {
 
     // Handling succesful user login (and succesful logout [edge case])
     if (isAuthenticated && !isLoading) {
-        navigate("/core")
+        navigate("/landing")
     }
 
     return (

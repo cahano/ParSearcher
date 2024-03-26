@@ -14,6 +14,7 @@ import TeamPage from "../pages/public/teamPage";
 // Protected route
 import ProtectedRoute from './protectedRoute' 
 // Private pages
+import LandingPage from "../pages/private/landingPage";
 import CorePage from "../pages/private/corePage";
 
 
@@ -24,6 +25,7 @@ export const AppRouter = () => {
 
                     {/* Pages requiring auth */}
                     <Route element={<ProtectedRoute />}>
+                        <Route path="/landing" element={<LandingPage />} />
                         <Route path="/core" element={<CorePage />} />
                     </Route>
 
