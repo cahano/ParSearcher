@@ -25,9 +25,10 @@
 }
 #lead_line {
     color: rgb(137, 137, 255);
-    width: 90vw;
+    width: 100vw;
     margin-top: 5vh;
-    text-align: center;
+    margin-left: 2.9vw;
+    /* text-align: center; */
     font-size: 3.8vw;
 }
 
@@ -47,27 +48,72 @@
     text-align: center;
     font-size: 1.9vw;
     width: 78vw;
-    margin-bottom: 12vh;
+    margin-bottom: 8vh;
 }
 
-#forth_line {
-    color: #222A35;
-    width: 70vw;
+/* Formatting homepage scroll button */
+#scroll_link {
+    width: 30vw;
     margin: auto;
-    margin-bottom: -13vh;
+    background-color: #d9d9d9;
+    border-radius: .3vw;
+    box-shadow: rgba(0, 0, 0, 0.5) 0vw 0.5vw 2vw 0.5vw;
+    padding: 0.2vh 1vw .1vh 1vw;
+    overflow: hidden;
     text-align: center;
-    font-size: 2.5vw;
+    vertical-align: middle;
+    font-size: 1.25vw;
+    color: #222A35;
+}
+/* Overriding link decorations */
+#scroll_link a {
+    text-decoration: none !important;
+    color: #222A35;
+}
+#scroll_link:hover {
+    color: rgb(137, 137, 255);
+    font-weight: bold;
+    font-style: italic;
+    width: 33vw;
+    border: rgb(137, 137, 255) .2vw solid;
+    font-size: 1.3vw;
+}
+#forth_line {
+    margin: auto;
+}
+#forth_line:hover {
+    color: rgb(137, 137, 255);
+}
+
+/* Carat between home page and underpage */
+#carat {
+    position: relative;
+    margin: auto;
+    margin-top: 1vh;
+    height: 8vh;
+    width: 6vw;
+    margin-bottom: 5vh;
+    /* animation */
+    animation: MoveUpDown 2s linear infinite;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 2vh;
+      }
 }
 
 /* under page */
 #under_page {
-    height: 113vh;
+    height: 118vh;
 }
 
 #up_title {
     color: rgb(137, 137, 255);
     /* margin-left: 5vw; */
-    margin-top: 20vh;
+    margin-top: 0vh;
     text-align: left;
     width: 92vw;
     font-size: 3vw;
@@ -101,6 +147,7 @@
 #home_table {
     margin: auto;
     margin-top: 7vh;
+    margin-bottom: 8vh;
     width: 80vw;
     text-align: center;
 }
@@ -109,7 +156,7 @@
 .ht_item {
     display: inline-table;
     width: 15vw;
-    min-height: 53vh;
+    min-height: 47vh;
     background-color: #222a35;
     border-radius: .3vw;
 }

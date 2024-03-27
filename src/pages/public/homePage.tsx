@@ -6,6 +6,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 
 import './static/homePage-styles.css'
+import carat from '../../assets/carat_psch.svg'
 import { Parts } from './../../components/particles'
 import NavBar from './../../components/header'
 import Footer from './../../components/footer'
@@ -49,10 +50,17 @@ const HomePage: React.FC = () => {
           <h2 id="thd_line">Despite the growing power of AI, millions of businesses
                             still handle data <i>no differently than 20 years ago.</i></h2>
 
-          <a className='sol_link' href='#_scrollto'>
-            <h2 id="forth_line"><i>Let's finally change that.</i></h2>
-          </a>
+          <div id="scroll_link">
+            <a href='#_scrollto'>
+              <h2 id="forth_line">Let's finally change that</h2>
+            </a>
+          </div>
 
+        </div>
+
+        {/* SVG carat */}
+        <div id="carat">
+          <img src={carat} alt=""/>
         </div>
 
         {/* FOLLOWING LANDING PAGE */}
@@ -106,11 +114,10 @@ const HomePage: React.FC = () => {
 
           </div>
 
-        </div>
+          {/* Importing footer */}
+          <Footer />
 
-        
-      {/* Importing footer */}
-      <Footer />
+        </div>
 
       </div>
       

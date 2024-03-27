@@ -124,7 +124,7 @@ const TeamPage: React.FC = () => {
                             regional banking. Following this exciting chapter at P.N.C. and inspired by 
                             the potential opportunities he saw in the intersection between technology 
                             and finance, Brandon made the decision to leave the firm 
-                            and co-found Caliburn.
+                            and cofound ParSearch.
                             </h3>
                             <h3>
                             Brandon's interests include home cooking, musical composition and
