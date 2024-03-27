@@ -16,6 +16,7 @@ const HomePage: React.FC = () => {
   // Importing router navigation hook
   const navigate = useNavigate();
 
+  // Navigating
   function handleSol() {
     navigate("/solutions");
   }
@@ -75,6 +76,7 @@ const HomePage: React.FC = () => {
 
                <button onClick={handleSol}>Solutions</button>
             </div>
+            <div className='ht_spacer'></div>
             {/* Inquire Panel */}
             <div className='ht_item'>
               <h3>Sound Relevant?</h3>
@@ -83,6 +85,7 @@ const HomePage: React.FC = () => {
 
                <button onClick={handleInq}>Inquire</button>
             </div>
+            <div className='ht_spacer'></div>
             {/* Team panel */}
             <div className='ht_item'>
               <h3>Our Team</h3>
@@ -91,6 +94,7 @@ const HomePage: React.FC = () => {
 
               <button onClick={handleTeam}>Team</button>
             </div>
+            <div className='ht_spacer'></div>
             {/* Login panel */}
             <div className='ht_item'>
               <h3>Login</h3>

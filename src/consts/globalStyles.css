@@ -71,6 +71,11 @@ code {
     color: rgb(137, 137, 255);
     box-shadow: rgba(0, 0, 0, 0.59) 0vw .2vh .3vw .2vh;
 }
+/* Sign out tab (on private tabs) */
+#so_nav {
+    float: right;
+    padding: 0.2vw;
+}
 /* Solutions tab */
 #sol_nav {
     margin-right: 1vw;

@@ -2,10 +2,10 @@
 // Auth hook
 //
 
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Amplify } from "aws-amplify";
 import { Hub } from 'aws-amplify/utils';
-import {  signOut as awsSO } from "aws-amplify/auth";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { signOut as awsSO } from "aws-amplify/auth";
 
 import { awsConfig } from "../consts/auth";
 import { useSessionStorage } from "./useSessionStorage";
@@ -63,7 +63,7 @@ const useProvideAuth = (): UseAuth => {
         const initUser = getSessionStorage('user');
         return initUser ? true : false
     });
-    // Initiating user state with session storage, if exsists
+    // Initiating user state with session storage, if exists
     const [username, setUsername] = useState(() => {
         const initUser = getSessionStorage('user');
         return initUser ? initUser : ""
@@ -81,6 +81,11 @@ const useProvideAuth = (): UseAuth => {
             setIsLoading(false)
             // Storing user in session storage
             setSessionStorage('user', data.payload.data.username)
+          } else {
+            // If user is not logged in, update states
+            setUsername('')
+            setIsAuthenticated(false)
+            setIsLoading(false)
           }
         });
       }, []);

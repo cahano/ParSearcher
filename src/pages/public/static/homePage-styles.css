@@ -108,10 +108,13 @@
 /* Each item in the page guide */
 .ht_item {
     display: inline-table;
-    width: 19vw;
-    height: 45vh;
-    /* border will be temporary */
-    border: 1px solid black;
+    width: 15vw;
+    min-height: 53vh;
+    background-color: #222a35;
+    border-radius: .3vw;
+}
+.ht_item:hover {
+    box-shadow: rgba(0, 0, 0, 0.59) 0vw .2vh .3vw .2vh;
 }
 .ht_item h3 {
     color: rgb(137, 137, 255);
@@ -120,11 +123,16 @@
 }
 .ht_item p {
     font-size: 1.8vh;
-    color: #222A35;
+    color: #d9d9d9;
     font-weight: bold;
     overflow-wrap: break-word;
     min-height: 6vh;
     /* max-height: 5vh; */
+}
+.ht_spacer {
+    display: inline-block;
+    width: 5vw;
+    height: 0vh;
 }
 
 /* Buttons on the under page */
@@ -132,7 +140,7 @@
     
     margin-top: 2vh;
 
-    width: 15vw;
+    width: 8vw;
     height: 4vh;
 
     background-color: rgb(137, 137, 255);
@@ -149,8 +157,8 @@
 .ht_item button:hover {
     margin-top: 2vh;
 
-    width: 15vw;
-    height: 4vh;
+    width: 8.5vw;
+    height: 4.5vh;
 
     background-color: rgb(137, 137, 255);
     color: #222A35;

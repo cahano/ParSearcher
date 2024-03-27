@@ -13,10 +13,15 @@ import { useAuth } from "../hooks/useAuth"
 const NavBar: React.FC = () => {
 
     // Calling auth hook for navbar
-    const { isAuthenticated, username } = useAuth();
+    const { isAuthenticated, username, signOut } = useAuth();
 
     // calling use location to render header based on current pages
     const location = useLocation();
+
+    // Logging out
+    function navSignOut() {
+        signOut();
+    }
 
     // Navbar for PRIVATE pages
     if (PRIVATE_ROUTES.indexOf(location.pathname) > -1) {
@@ -33,6 +38,13 @@ const NavBar: React.FC = () => {
                 <NavLink to="/landing" className={"nactive"}>
                     <div id="login_nav">
                         <button>{username}</button>
+                    </div>
+                </NavLink>
+
+                {/* Logout button */}
+                <NavLink to="/home" className={"nactive"}>
+                    <div id="so_nav">
+                        <button onClick={navSignOut}>Sign Out</button>
                     </div>
                 </NavLink>
 
